@@ -1,0 +1,4 @@
+---
+name: "Rigorous Systems Engineering"
+---
+
