@@ -1,9 +1,3 @@
-{{ partial "init.html" . }}
-{{ partial "header.html" . }}
-
-<body>
-    <div class="container" role="main">
+{{ define "main" }}
     {{ partial "person-normal.html" . }}
-    </div>
-</body>
-
+{{ end }}

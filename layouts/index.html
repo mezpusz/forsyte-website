@@ -1,37 +1,18 @@
-{{ partial "init.html" . }}
-{{ partial "header.html" . }}
-<body>
-    <div class="container" role="main">
+{{ define "main" }}
     <div class="page-header">
         <h1>Research groups</h1>
     </div>
     {{ range $groupname, $group := .Site.Taxonomies.groups }}
     <h2><a href="{{ "/groups/" | relLangURL}}{{ $groupname | urlize }}">{{ $group.Page.Params.name }}</a></h2>
-    <div class="row">
-        {{ range $index, $person := $group }}
-            {{ with (and (eq (mod $index 4) 0) (ne $index 0)) }}
-    </div><div class="row">
-            {{ end }}
-            {{ partial "person-small.html" $person }}
-        {{ end }}
-    </div>
+    {{ partial "people-row.html" (where $group "Params.alumni" false) }}
     {{ end }}
+    {{ $people := .Site.GetPage "section" "people" }}
     <div class="page-header">
-        <h1>Non-scientific staff</h1>
+        <h1>Administrative staff</h1>
     </div>
-        {{ range $rolename, $role := .Site.Taxonomies.roles }}
-        {{ with (and (ne $rolename "phd") (ne $rolename "professor") (ne $rolename "postdoc")) }}
-        <h2><a href="{{ "/roles/" | relLangURL}}{{ $rolename | urlize }}">{{ $rolename }}</a></h2>
-        <div class="row">
-            {{ range $index, $person := $role }}
-                {{ partial "person-small.html" $person }}
-            {{ end }}
-        </div>
-        {{ end }}
-        {{ end }}
+        {{ partial "people-row.html" (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
     <div class="page-header">
         <h1>Alumni</h1>
     </div>
-    </div>
-    {{ partial "scripts.html" . }}
-</body>
+    {{ partial "people-row.html" (where $people.Pages ".Params.alumni" true) }}
+{{ end }}

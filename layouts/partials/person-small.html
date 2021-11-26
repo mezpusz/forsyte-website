@@ -1,8 +1,8 @@
 
-<div class="col-md-3">
-    <div class="card bg-light hoverable" style="width: 15rem;">
-        <div class="card-body">
-            <img style="width: 100; height: 100; object-fit: cover; object-position: center center" src="{{ .Params.image }}" class="card-img-top" alt="...">
+<div class="col-md-4">
+    <div class="media bg-light hoverable" style="width: 20rem;">
+        <img style="width: 100; height: 100; object-fit: cover" src="{{ .Params.image }}" class="mr-3">
+        <div class="media-body">
             <a href="{{ .Permalink }}" class="stretched-link"><h5 class="card-title">{{ .Params.name }}</h5></a>
             {{ range .Params.roles }}
                 {{ partial "rolesingular.html" . }}
