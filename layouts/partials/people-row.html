@@ -1,0 +1,8 @@
+<div class="row my-5">
+    {{ range $index, $person := . }}
+        {{ with (and (eq (mod $index 3) 0) (ne $index 0)) }}
+</div><div class="row my-5">
+        {{ end }}
+        {{ partial "person-small.html" $person }}
+    {{ end }}
+</div>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+    {{ range .Pages }}
+    <div class="media">
+        <div class="media-body">
+        <h4 class="mt-0">{{ .Title }}</h4>
+        <span class="date">{{ time.Format "Monday, Jan 2, 2006" .Date  }}</span>
+        {{ .Content }}
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
