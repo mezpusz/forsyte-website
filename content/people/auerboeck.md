@@ -1,12 +1,11 @@
 ---
-name: "Your Name"
+name: "Juliane Auerböck"
 groups: []
-roles: []
-website: "https://forsyte.at"
-email: "name@forsyte.at"
-phone: "+43..."
+roles: ["office-admin"]
+email: "auerboe@forsyte.at"
+phone: "+43 (1) 58801 – 184 03"
 image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
+room: "HD0319"
 alumni: false
 ---
 

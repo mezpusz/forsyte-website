@@ -1,46 +1,9 @@
+{{ partial "init.html" . }}
+{{ partial "header.html" . }}
 
 <body>
-    {{ .Title }}
-    <h1>{{ .Params.name }}</h1>
-    <h2>{{ .Params.role }}</h2>
-    <tbody>
-        {{ with .Param "groups" }}
-            {{ if gt (len .) 0 }}
-            <tr>
-                <td><strong>Group{{ if gt (len .) 1 }}s{{ end }}:</strong>
-                <td>
-                {{ range $index, $group := . }}
-                    {{- if gt $index 0 }}, {{ end -}}
-                    {{ with $.Site.GetPage (printf "/groups/%s" $group) -}}
-                        <a href="{{ .Permalink }}">{{ .Params.name }}</a>
-                    {{- end -}}
-                {{- end -}}
-                </td>
-            </tr>
-            {{ end }}
-        {{ end }}
-        <tr>
-            <td><strong>Room:</strong></td>
-            <td><a target="_blank" href="http://forsyte.at/floorplan/?mark={{ .Params.room }}">{{ .Params.room }}</a> (<a title="Visiting FORSYTE" href="http://forsyte.at/contact/visiting/">how to get there</a>)</td>
-        </tr>
-        {{ with .Param "phone" }}
-        <tr>
-            <td><strong>Phone:</strong></td>
-            <td>{{ . }}</td>
-        </tr>
-        {{ end }}
-        <tr>
-            <td><strong>Email:</strong></td>
-            <td><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></td>
-        </tr>
-        {{ with .Param "website" }}
-        <tr>
-            <td><strong>Website:</strong></td>
-            <td><a href="{{ . }}">{{ . }}</a></td>
-        </tr>
-        {{ end }}
-    </tbody>
-    
-    {{ .Content }}
+    <div class="container" role="main">
+    {{ partial "person-normal.html" . }}
+    </div>
 </body>
 

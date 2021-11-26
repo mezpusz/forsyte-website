@@ -4,3 +4,9 @@ title = "My New Hugo Site"
 
 [taxonomies]
   group = "groups"
+  role = "roles"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

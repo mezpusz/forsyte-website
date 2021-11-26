@@ -1,12 +1,11 @@
 ---
-name: "Your Name"
+name: "Alexandra Traxler"
 groups: []
-roles: []
-website: "https://forsyte.at"
-email: "name@forsyte.at"
-phone: "+43..."
+role: "VCLA Manager"
+email: "atraxler@forsyte.at"
+phone: "+43 (1) 58801 – 192 418"
 image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
+room: "HE0308"
 alumni: false
 ---
 

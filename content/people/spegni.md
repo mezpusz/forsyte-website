@@ -1,12 +1,11 @@
 ---
-name: "Your Name"
+name: "Francesco Spegni"
 groups: []
-roles: []
-website: "https://forsyte.at"
-email: "name@forsyte.at"
-phone: "+43..."
+role: "Your Role"
+email: "spegni@forsyte.at"
+phone: "+43 (1) 58801 – 740 038"
 image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
+room: "HE0314"
 alumni: false
 ---
 

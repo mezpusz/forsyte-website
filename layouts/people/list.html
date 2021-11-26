@@ -1,0 +1,19 @@
+
+{{ partial "init.html" . }}
+{{ partial "header.html" . }}
+<body>
+    <div class="container" role="main">
+    <div class="row">
+        {{ range $index, $person := .Pages }}
+            {{ with (and (eq (mod $index 4) 0) (ne $index 0)) }}
+    </div><div class="row">
+            {{ end }}
+            {{ partial "person-small.html" $person }}
+        {{ end }}
+    </div>
+    <div class="page-header">
+        <h1>Alumni</h1>
+    </div>
+    </div>
+    {{ partial "scripts.html" . }}
+</body>

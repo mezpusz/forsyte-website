@@ -1,22 +1,37 @@
-
+{{ partial "init.html" . }}
+{{ partial "header.html" . }}
 <body>
-    hello
-    <section>
-        <ul id="all-taxonomies">
-          {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
-            <li><a href="{{ "/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a>
-              <ul>
-                {{ range $key, $value := $taxonomy }}
-                <li> {{ $key }} </li>
-                      <ul>
-                      {{ range $value.Pages }}
-                          <li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .Params.name }} </a> </li>
-                      {{ end }}
-                      </ul>
-                {{ end }}
-              </ul>
-            </li>
-          {{ end }}
-        </ul>
-      </section>
+    <div class="container" role="main">
+    <div class="page-header">
+        <h1>Research groups</h1>
+    </div>
+    {{ range $groupname, $group := .Site.Taxonomies.groups }}
+    <h2><a href="{{ "/groups/" | relLangURL}}{{ $groupname | urlize }}">{{ $group.Page.Params.name }}</a></h2>
+    <div class="row">
+        {{ range $index, $person := $group }}
+            {{ with (and (eq (mod $index 4) 0) (ne $index 0)) }}
+    </div><div class="row">
+            {{ end }}
+            {{ partial "person-small.html" $person }}
+        {{ end }}
+    </div>
+    {{ end }}
+    <div class="page-header">
+        <h1>Non-scientific staff</h1>
+    </div>
+        {{ range $rolename, $role := .Site.Taxonomies.roles }}
+        {{ with (and (ne $rolename "phd") (ne $rolename "professor") (ne $rolename "postdoc")) }}
+        <h2><a href="{{ "/roles/" | relLangURL}}{{ $rolename | urlize }}">{{ $rolename }}</a></h2>
+        <div class="row">
+            {{ range $index, $person := $role }}
+                {{ partial "person-small.html" $person }}
+            {{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
+    <div class="page-header">
+        <h1>Alumni</h1>
+    </div>
+    </div>
+    {{ partial "scripts.html" . }}
 </body>

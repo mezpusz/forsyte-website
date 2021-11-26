@@ -1,12 +1,12 @@
 ---
-name: "Your Name"
+name: "Katalin Fazekas"
 groups: []
-roles: []
-website: "https://forsyte.at"
-email: "name@forsyte.at"
+roles: ["postdoc"]
+website: "http://fmv.jku.at/fazekas"
+email: "kfazekas@forsyte.at"
 phone: "+43..."
 image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
+room: "HA0307"
 alumni: false
 ---
 
