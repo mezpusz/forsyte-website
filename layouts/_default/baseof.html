@@ -20,8 +20,11 @@
 <body>
   {{ partial "header.html" . }}
   <div class="container" role="main">
+    <hr/>
   {{ block "main" . }}{{ end }}
   </div>
 
   {{ partial "scripts.html" . }}
+  {{ partial "footer.html" . }}
 </body>
+

@@ -1,18 +1,38 @@
 {{ define "main" }}
+<div class="row">
+<div class="col-9">
     <div class="page-header">
-        <h1>Research groups</h1>
+        <h3 class="display-5">Research groups</h3>
     </div>
     {{ range $groupname, $group := .Site.Taxonomies.groups }}
-    <h2><a href="{{ "/groups/" | relLangURL}}{{ $groupname | urlize }}">{{ $group.Page.Params.name }}</a></h2>
+    <h5><a href="{{ "/groups/" | relLangURL}}{{ $groupname | urlize }}">{{ $group.Page.Params.name }}</a></h5>
     {{ partial "people-row.html" (where $group "Params.alumni" false) }}
     {{ end }}
     {{ $people := .Site.GetPage "section" "people" }}
+    <hr/>
     <div class="page-header">
-        <h1>Administrative staff</h1>
+        <h3 class="display-5">Administrative staff</h3>
     </div>
-        {{ partial "people-row.html" (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
+    {{ partial "people-row.html" (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
+    <hr/>
     <div class="page-header">
-        <h1>Alumni</h1>
+        <h3 class="display-5">Alumni</h3>
     </div>
     {{ partial "people-row.html" (where $people.Pages ".Params.alumni" true) }}
+</div>
+<div class="col-3">
+    <div class="page-header">
+        <h3 class="display-5">Recent news</h3>
+    </div>
+    {{ range (first 5 (.Site.GetPage "section" "news").Pages) }}
+    <div class="media position-relative shadow-sm bg-light border h-100 overflow-hidden mx-2 mb-3" style="max-height: 200;">
+        <div class="media-body py-3 px-3">
+            <a href="{{ .Permalink }}" class="stretched-link"><h6 class="mb-2">{{ .Title }}</h6></a>
+            <small><span class="text-success">{{ time.Format "Monday, Jan 2, 2006" .Date  }}</span></small>
+            <small><p class="my-2">{{ .Plain }}</p></small>
+        </div>
+    </div>
+    {{ end }}
+</div>
+</div>
 {{ end }}

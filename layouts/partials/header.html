@@ -1,21 +1,28 @@
 
-<div class="container"><a href="/"><img src="https://forsyte.at/wp-content/uploads/2012/02/forsyte.png"/></a></div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <div class="container"><a href="/"><img src="https://forsyte.at/wp-content/uploads/2012/02/forsyte.png"/></a></div> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
+      <a class="navbar-brand" href="/"><img style="height: 50px;" src="https://forsyte.at/wp-content/uploads/2012/02/forsyte.png"/></a>
       <div class="navbar-collapse">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav ml-auto">
         {{ $page := . }}
-        <li class="nav-item {{ with .IsHome }} active {{ end }}"><a class="nav-link" href="/">Home</a></li>
-        {{ range (slice "news" "people" "groups" "projects" "publications" "software" "teaching" "events" "talks" "press" "contact") }}
+        <li class="nav-item {{ with .IsHome }} active {{ end }}"><a class="nav-link" href="/">HOME</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              RESEARCH
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {{ range (slice "groups" "projects" "publications" "software") }}
+                {{ $c := (split $page.RelPermalink "/") }}
+                <a class="dropdown-item" href="/{{ . }}">{{ (title . ) }}</a>
+            {{ end }}
+            </div>
+        </li>
+        {{ range (slice "news" "people" "teaching" "events" "talks" "press" "contact") }}
             {{ $c := (split $page.RelPermalink "/") }}
-            <li class="nav-item {{ with (eq . (index $c 1)) }} active {{ end }}"><a class="nav-link" href="/{{ . }}">{{ (title . ) }}</a></li>
+            <li class="nav-item {{ with (eq . (index $c 1)) }} active {{ end }}"><a class="nav-link" href="/{{ . }}">{{ (upper . ) }}</a></li>
         {{ end }}
         </ul>
       </div>
     </div>
   </nav>
-  <div style="position:relative; height: 40px;float: right;position:relative;top:-50px;right: 5px;padding: 4px;z-index:10;">
-    <img src="https://forsyte.at/static/img/header/logo-tuwien-informatics-white.svg" alt="TU Wien Informatics" style="height: 100%;">
-    <a href="https://www.tuwien.at" title="TU Wien" style="position:absolute;display:block;top:0;left:0;width:17%;height:100%;"></a>
-    <a href="https://informatics.tuwien.ac.at" title="TU Wien Informatics" style="position:absolute;display:block;top:0;left:17%;width:83%;height:100%;"></a>
-  </div>
