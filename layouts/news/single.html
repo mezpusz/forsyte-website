@@ -1,0 +1,5 @@
+{{ define "main" }}
+    <h4 class="my-2">{{ .Title }}</h4></a>
+    <span class="text-success">{{ time.Format "Monday, Jan 2, 2006" .Date  }}</span>
+    <p>{{ .Content }}</p>
+{{ end }}
