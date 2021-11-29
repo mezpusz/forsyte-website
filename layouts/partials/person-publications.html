@@ -1,0 +1,15 @@
+
+{{ $publications := slice }}
+{{ $person := . }}
+{{ range (.Site.GetPage "section" "publications").Pages }}
+    {{ range .Params.references }}
+        {{ $found := false }}
+        {{ range .author }}
+            {{ with (or (in $person.Params.citation_aliases .) (eq (printf "%s %s" .given .family) $person.Params.name )) }}
+                {{ $found = true }}
+            {{ end }}
+        {{ end }}
+        {{ if $found }}{{ $publications = $publications | append . }}{{ end }}
+    {{ end }}
+{{ end }}
+{{ return $publications }}

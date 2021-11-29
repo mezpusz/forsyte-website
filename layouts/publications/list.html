@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <div class="page-header">
+        <h3 class="display-5">Publications</h2>
+    </div>
+    {{ range .Pages }}
+      {{ range .Params.references }}
+        {{ partial "publication.html" . }}
+      {{ end }}
+    {{ end }}
+{{ end }}

@@ -52,3 +52,11 @@
 
 {{ .Content }}
 
+{{ with partial "person-publications.html" . }}
+<div class="page-header">
+    <h3 class="display-5">Publications</h3>
+    {{ range . }}
+        {{ partial "publication.html" . }}
+    {{ end }}
+</div>
+{{ end }}

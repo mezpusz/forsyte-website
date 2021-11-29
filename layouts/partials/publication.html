@@ -1,0 +1,20 @@
+{{ with .url }}<a href="{{ . }}">{{ end }}
+<strong>{{ .title }}</strong><br>{{ with .url }}</a>{{ end }}
+{{ $authors := (cond (eq .type "book") .editor .author) }}
+{{ range $index, $a := .author }}
+{{- if gt $index 0 }}, {{ end -}}{{- $a.given }} {{ $a.family -}}
+{{ end }}
+{{ $first := true }}
+{{ with (index . "container-title") }}
+    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
+    <em>{{ . }}</em>
+{{ end }}
+{{ with (index . "issued") }}
+    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
+    {{ . }}
+{{ end }}
+{{ with (index . "page") }}
+    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
+    pages {{ . }}
+{{ end }}
+<hr/>
