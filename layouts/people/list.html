@@ -1,4 +1,4 @@
 
 {{ define "main" }}
-    {{ partial "people-row.html" .Pages }}
+    {{ partial "people-row.html" (dict "people" .Pages "mod" 4) }}
 {{ end }}

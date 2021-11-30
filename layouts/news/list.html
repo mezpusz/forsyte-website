@@ -1,13 +1,9 @@
 {{ define "main" }}
     {{ range $index, $article := .Pages }}
         {{ with (and (eq (mod $index 4) 0) (ne $index 0)) }}</div>{{ end }}
-        {{ with (eq (mod $index 4) 0) }}<div class="row my-3" style="height: 250px;">{{ end }}
-        <div class="media position-relative shadow bg-light border h-100 overflow-hidden mx-2" style="width: 23%;">
-            <div class="media-body py-3 px-3">
-                <a href="{{ $article.Permalink }}" class="stretched-link"><h6 class="mb-2">{{ $article.Title }}</h6></a>
-                <small><span class="text-success">{{ time.Format "Monday, Jan 2, 2006" $article.Date  }}</span></small>
-                <small><p class="my-2">{{ $article.Plain }}</p></small>
-            </div>
+        {{ with (eq (mod $index 4) 0) }}<div class="row my-3">{{ end }}
+        <div class="col-3" style="height: 250px;">
+            {{ partial "news-small.html" $article }}
         </div>
     {{ end }}
     </div>

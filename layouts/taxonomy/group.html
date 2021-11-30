@@ -4,5 +4,5 @@
     <h3>Description</h3>
     {{ .Content }}
     <h3>Group members</h3>
-    {{ partial "people-row.html" (where .Pages "Params.alumni" false) }}
+    {{ partial "people-row.html" (dict "people" (where .Pages "Params.alumni" false) "mod" 4) }}
 {{ end }}
