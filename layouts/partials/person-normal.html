@@ -1,7 +1,7 @@
 <div class="row">
-<div class="col">
-<img style="width: 200; height: 200; object-fit: cover; object-position: center center" src="{{ .Params.image }}" class="card-img-top" alt="...">
-</div><div class="col">
+<div class="col-3">
+<img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ .Params.image }}">
+</div><div class="col-9">
 <h1>{{ .Params.name }}</h1>
 {{ with .Param "roles" }}
     {{ if gt (len .) 0 }}
@@ -47,6 +47,25 @@
     <div class="col"><a href="{{ . }}">{{ . }}</a></div>
 </div>
 {{ end }}
+<div class="row">
+    <div class="col"><strong>Other links</strong></div>
+    <div class="col">
+        {{ with .Param "github" }}
+        <div style="height: 25; width: 25;" class="bg-dark">
+        <a href="https://github.com/{{ . }}">
+            <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
+        </a>
+        </div>
+        {{end}}
+        {{ with .Param "orcid" }}
+        <div style="height: 25; width: 25;">
+            <a href="https://orcid.org/{{ . }}">
+                <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
 </div>
 </div>
 

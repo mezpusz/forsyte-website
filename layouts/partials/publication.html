@@ -1,20 +1,41 @@
-{{ with .url }}<a href="{{ . }}">{{ end }}
-<strong>{{ .title }}</strong><br>{{ with .url }}</a>{{ end }}
+<div class="row">
+<div class="col-1">
+{{ .type }}
+</div>
+<div class="col-11">
+<strong>{{ .title }}</strong><br>
 {{ $authors := (cond (eq .type "book") .editor .author) }}
 {{ range $index, $a := .author }}
 {{- if gt $index 0 }}, {{ end -}}{{- $a.given }} {{ $a.family -}}
 {{ end }}
+
 {{ $first := true }}
 {{ with (index . "container-title") }}
     {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
     <em>{{ . }}</em>
 {{ end }}
-{{ with (index . "issued") }}
+{{ with .volume }}
     {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    {{ . }}
+    volume {{ . }}
 {{ end }}
-{{ with (index . "page") }}
+{{ with .page }}
     {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
     pages {{ . }}
 {{ end }}
+{{ with .issued }}
+    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
+    {{ . }}.
+{{ end }}
+
+{{ $first = true }}
+{{ with .url }}
+    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
+    <a href="{{ . }}">[pdf]</a>
+{{ end -}}
+{{- with .doi }}
+    {{ with $first }}<br>{{ $first = false }}{{ end }}
+    <a href="https://doi.org/{{ . }}">[doi]</a>
+{{ end }}
+</div>
+</div>
 <hr/>
