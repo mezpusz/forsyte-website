@@ -51,18 +51,14 @@
     <div class="col"><strong>Other links</strong></div>
     <div class="col">
         {{ with .Params.github }}
-        <div style="height: 25; width: 25;" class="bg-dark">
         <a href="https://github.com/{{ . }}">
-            <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
+            <img style="width: 25; height: 25; filter: invert(100%); object-fit: scale; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
         </a>
-        </div>
         {{end}}
         {{ with .Params.orcid }}
-        <div style="height: 25; width: 25;">
-            <a href="https://orcid.org/{{ . }}">
-                <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
-            </a>
-        </div>
+        <a href="https://orcid.org/{{ . }}">
+            <img style="width: 25; height: 25; object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
+        </a>
         {{ end }}
     </div>
 </div>
