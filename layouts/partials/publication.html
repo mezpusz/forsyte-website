@@ -1,41 +1,41 @@
-<div class="row">
-<div class="col-1">
-{{ .type }}
-</div>
-<div class="col-11">
-<strong>{{ .title }}</strong><br>
-{{ $authors := (cond (eq .type "book") .editor .author) }}
-{{ range $index, $a := .author }}
-{{- if gt $index 0 }}, {{ end -}}{{- $a.given }} {{ $a.family -}}
+<strong>{{ .publication.title }}</strong>
+{{ $line0 := slice }}
+{{ range $index, $a := .publication.author }}
+    {{ $name := (partial "print-name.html" $a) }}
+    {{ with (index $.people_links $name) }}
+        {{ $name = (printf "<a class=\"author_link\" href=\"%s\">%s</a>" . $name) }}
+    {{ end }}
+    {{ $line0 = $line0 | append $name }}
+{{ end }}
+{{ with $line0 }}
+    <br>{{ delimit . ", " }}.
 {{ end }}
 
-{{ $first := true }}
-{{ with (index . "container-title") }}
-    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    <em>{{ . }}</em>
+{{ $line1 := slice }}
+{{ with (index .publication "container-title") }}
+    {{ $line1 = $line1 | append (printf "<em>%s</em>" .) }}
 {{ end }}
-{{ with .volume }}
-    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    volume {{ . }}
+{{ with .publication.volume }}
+    {{ $line1 = $line1 | append (printf "volume %d" .) }}
 {{ end }}
-{{ with .page }}
-    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    pages {{ . }}
+{{ with .publication.page }}
+    {{ $line1 = $line1 | append (printf "pages %s" .) }}
 {{ end }}
-{{ with .issued }}
-    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    {{ . }}.
+{{ with .publication.issued }}
+    {{ $line1 = $line1 | append . }}
+{{ end }}
+{{ with $line1 }}
+    <br>{{ delimit . ", " }}.
 {{ end }}
 
-{{ $first = true }}
-{{ with .url }}
-    {{ with $first }}<br>{{ $first = false }}{{ else }}, {{ end }}
-    <a href="{{ . }}">[pdf]</a>
+{{ $line2 := slice }}
+{{ with .publication.url }}
+    {{ $line2 = $line2 | append (printf "<a href=\"%s\">[pdf]</a>" .) }}
 {{ end -}}
-{{- with .doi }}
-    {{ with $first }}<br>{{ $first = false }}{{ end }}
-    <a href="https://doi.org/{{ . }}">[doi]</a>
+{{- with .publication.doi }}
+    {{ $line2 = $line2 | append (printf "<a href=\"https://doi.org/%s\">[doi]</a>" .) }}
 {{ end }}
-</div>
-</div>
+{{ with $line2 }}
+    <br>{{ delimit . " " }}
+{{ end }}
 <hr/>

@@ -2,9 +2,9 @@
     <div class="page-header">
         <h3 class="display-5">Publications</h2>
     </div>
-    {{ range .Pages }}
-      {{ range .Params.references }}
-        {{ partial "publication.html" . }}
-      {{ end }}
+    {{ with partial "person-publications.html" (dict "people" (.Site.GetPage "section" "people").Pages "allowNoAuthor" true "page" .) }}
+        {{ range . }}
+            {{ partial "publication.html" . }}
+        {{ end }}
     {{ end }}
 {{ end }}

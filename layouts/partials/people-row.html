@@ -1,7 +1,7 @@
-{{ $mod := .mod }}
 {{ range $index, $person := .people }}
-    {{ with (and (eq (mod $index $mod) 0) (ne $index 0)) }}</div>{{ end }}
-    {{ with (eq (mod $index $mod) 0) }}<div class="row my-2">{{ end }}
-    {{ partial "person-small.html" (dict "person" $person "mod" $mod) }}
+    {{ $div := (eq (mod $index $.mod) 0) }}
+    {{ if (and $div (ne $index 0)) }}</div>{{ end }}
+    {{ if $div }}<div class="row my-2">{{ end }}
+    {{ partial "person-small.html" (dict "person" $person "mod" $.mod) }}
 {{ end }}
 </div>

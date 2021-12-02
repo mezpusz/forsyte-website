@@ -3,18 +3,18 @@
 <img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ .Params.image }}">
 </div><div class="col-9">
 <h1>{{ .Params.name }}</h1>
-{{ with .Param "roles" }}
-    {{ if gt (len .) 0 }}
-    <h2><!-- Role{{ if gt (len .) 1 }}s{{ end }}: -->
+{{ with .Params.roles }}
+    {{ if (len .) }}
+        <h2>
         {{ range $index, $role := . }}
-            {{- if gt $index 0 }}, {{ end -}}{{ partial "rolesingular.html" . }}
+            {{- if $index }}, {{ end -}}{{ partial "rolesingular.html" . }}
         {{- end -}}
-    </h2>
+        </h2>
     {{ end }}
 {{ end }}
 <div class="row">
-    {{ with .Param "groups" }}
-        {{ if gt (len .) 0 }}
+    {{ with .Params.groups }}
+        {{ if (len .) }}
             <div class="col"><strong>Group{{ if gt (len .) 1 }}s{{ end }}</strong></div>
             <div class="col">
             {{ range $index, $group := . }}
@@ -31,7 +31,7 @@
     <div class="col"><strong>Room</strong></div>
     <div class="col"><a target="_blank" href="http://forsyte.at/floorplan/?mark={{ .Params.room }}">{{ .Params.room }}</a> (<a title="Visiting FORSYTE" href="http://forsyte.at/contact/visiting/">how to get there</a>)</div>
 </div>
-{{ with .Param "phone" }}
+{{ with .Params.phone }}
 <div class="row">
     <div class="col"><strong>Phone</strong></div>
     <div class="col">{{ . }}</div>
@@ -41,7 +41,7 @@
     <div class="col"><strong>Email</strong></div>
     <div class="col"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>
 </div>
-{{ with .Param "website" }}
+{{ with .Params.website }}
 <div class="row">
     <div class="col"><strong>Website</strong></div>
     <div class="col"><a href="{{ . }}">{{ . }}</a></div>
@@ -50,14 +50,14 @@
 <div class="row">
     <div class="col"><strong>Other links</strong></div>
     <div class="col">
-        {{ with .Param "github" }}
+        {{ with .Params.github }}
         <div style="height: 25; width: 25;" class="bg-dark">
         <a href="https://github.com/{{ . }}">
             <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
         </a>
         </div>
         {{end}}
-        {{ with .Param "orcid" }}
+        {{ with .Params.orcid }}
         <div style="height: 25; width: 25;">
             <a href="https://orcid.org/{{ . }}">
                 <img class="w-100 h-100" style="object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
@@ -71,7 +71,7 @@
 
 {{ .Content }}
 
-{{ with partial "person-publications.html" . }}
+{{ with partial "person-publications.html" (dict "people" (slice .) "page" .) }}
 <div class="page-header">
     <h3 class="display-5">Publications</h3>
     {{ range . }}

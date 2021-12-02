@@ -1,8 +1,44 @@
 
 {{ define "main" }}
-    <h2>{{ .Params.name }}</h2>
-    <h3>Description</h3>
-    {{ .Content }}
-    <h3>Group members</h3>
-    {{ partial "people-row.html" (dict "people" (where .Pages "Params.alumni" false) "mod" 4) }}
+<table class="table">
+<tbody>
+    <tr>
+        <th scope="row">
+            <img src="{{ .Params.logo }}"/>
+        </th>
+        <td class="align-middle">
+            <h3>{{ .Params.name }}</h3>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row">
+            <h5>Description</h5>
+        </th>
+        <td class="align-middle">
+            {{ .Content }}
+        </td>
+    </tr>
+    {{ $people := (where .Pages "Params.alumni" false) }}
+    <tr>
+        <th scope="row">
+            <h5>Group members</h5>
+        </th>
+        <td class="align-middle">
+            {{ partial "people-row.html" (dict "people" $people "mod" 3) }}
+        </td>
+    </tr>
+    <tr>
+    {{ with partial "person-publications.html" (dict "people" $people "page" .) }}
+        <th scope="row">
+            <h5>Publications</h5>
+        </th>
+        <td class="align-middle">
+        {{ range . }}
+            {{ partial "publication.html" . }}
+        {{ end }}
+        </td>
+    {{ end }}
+    </tr>
+</tbody>
+</table>
 {{ end }}

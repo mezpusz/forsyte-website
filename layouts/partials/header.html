@@ -5,7 +5,6 @@
       <a class="navbar-brand" href="/"><img style="height: 50px;" src="https://forsyte.at/wp-content/uploads/2012/02/forsyte.png"/></a>
       <div class="navbar-collapse">
         <ul class="navbar-nav ml-auto">
-        {{ $page := . }}
         <li class="nav-item {{ with .IsHome }} active {{ end }}"><a class="nav-link" href="/">HOME</a></li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -13,14 +12,12 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             {{ range (slice "groups" "projects" "publications" "software") }}
-                {{ $c := (split $page.RelPermalink "/") }}
                 <a class="dropdown-item" href="/{{ . }}">{{ (title . ) }}</a>
             {{ end }}
             </div>
         </li>
         {{ range (slice "news" "people" "teaching" "events" "talks" "press" "contact") }}
-            {{ $c := (split $page.RelPermalink "/") }}
-            <li class="nav-item {{ with (eq . (index $c 1)) }} active {{ end }}"><a class="nav-link" href="/{{ . }}">{{ (upper . ) }}</a></li>
+            <li class="nav-item {{ if (eq . (index (split $.RelPermalink "/") 1)) }} active {{ end }}"><a class="nav-link" href="/{{ . }}">{{ (upper . ) }}</a></li>
         {{ end }}
         </ul>
       </div>

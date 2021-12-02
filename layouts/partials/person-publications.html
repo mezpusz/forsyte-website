@@ -1,15 +1,23 @@
-
 {{ $publications := slice }}
-{{ $person := . }}
-{{ range (.Site.GetPage "section" "publications").Pages }}
-    {{ range .Params.references }}
-        {{ $found := false }}
-        {{ range .author }}
-            {{ with (or (in $person.Params.citation_aliases .) (eq (printf "%s %s" .given .family) $person.Params.name )) }}
-                {{ $found = true }}
+{{ range ($.page.Site.GetPage "section" "publications").Pages }}
+    {{ range $index, $pub := .Params.references }}
+        {{ $people_links := dict }}
+        {{ range $index, $person := $.people }}
+            {{ range $index, $author := $pub.author }}
+                {{ $author_name := (partial "print-name.html" $author) }}
+                {{ range $person.Params.citation_aliases }}
+                    {{ if (eq $author .) }}
+                        {{ $people_links = merge $people_links (dict $author_name $person.RelPermalink) }}
+                    {{ end }}
+                {{ end }}
+                {{ if (eq $author_name $person.Params.name ) }}
+                    {{ $people_links = merge $people_links (dict $author_name $person.RelPermalink) }}
+                {{ end }}
             {{ end }}
         {{ end }}
-        {{ if $found }}{{ $publications = $publications | append . }}{{ end }}
+        {{ if (or $people_links (and (isset $ "allowNoAuthor") $.allowNoAuthor)) }}
+            {{ $publications = $publications | append (dict "publication" $pub "people_links" $people_links) }}
+        {{ end }}
     {{ end }}
 {{ end }}
 {{ return $publications }}
