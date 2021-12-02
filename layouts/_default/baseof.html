@@ -15,7 +15,7 @@
         .secondary_link {color:#022249}
         .primary_bg {background-color:#f8f9fa; border: 1px solid #dee2e6;}
         .primary_bg:hover {background-color:#fff8e6;}
-        .author_link {color:#000; text-decoration:underline;}
+        .author_link {text-decoration:underline;}
         /* forsyte: #c29626 */
     </style>
 
@@ -27,14 +27,14 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
   {{ partial "header.html" . }}
   <div class="container" role="main">
     <hr/>
   {{ block "main" . }}{{ end }}
   </div>
 
-  {{ partial "scripts.html" . }}
   {{ partial "footer.html" . }}
+  {{ partial "scripts.html" . }}
 </body>
 
