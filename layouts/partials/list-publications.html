@@ -1,0 +1,8 @@
+{{ $current_year := -1 }}
+{{ range (sort . "publication.issued" "desc") }}
+    {{ if (ne $current_year .publication.issued) }}
+        {{ $current_year = .publication.issued }}
+        <h2 class="display-5 pb-3">{{ (cond (gt $current_year 0) $current_year "No year") }}</h2>
+    {{ end }}
+    {{ partial "publication.html" . }}
+{{ end }}

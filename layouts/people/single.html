@@ -1,3 +1,75 @@
 {{ define "main" }}
-    {{ partial "person-normal.html" . }}
+<div class="row">
+<div class="col-3">
+<img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ .Params.image }}">
+</div><div class="col-9">
+<h1>{{ .Params.name }}</h1>
+{{ with .Params.roles }}
+    {{ if (len .) }}
+        <h2>
+        {{ range $index, $role := . }}
+            {{- if $index }}, {{ end -}}{{ partial "rolesingular.html" . }}
+        {{- end -}}
+        </h2>
+    {{ end }}
+{{ end }}
+<div class="row">
+    {{ with .Params.groups }}
+        {{ if (len .) }}
+            <div class="col"><strong>Group{{ if gt (len .) 1 }}s{{ end }}</strong></div>
+            <div class="col">
+            {{ range $index, $group := . }}
+                {{- if gt $index 0 }}, {{ end -}}
+                {{ with $.Site.GetPage (printf "/groups/%v" $group) -}}
+                    <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+                {{- end -}}
+            {{- end -}}
+            </div>
+        {{ end }}
+    {{ end }}
+</div>
+<div class="row">
+    <div class="col"><strong>Room</strong></div>
+    <div class="col"><a target="_blank" href="http://forsyte.at/floorplan/?mark={{ .Params.room }}">{{ .Params.room }}</a> (<a title="Visiting FORSYTE" href="http://forsyte.at/contact/visiting/">how to get there</a>)</div>
+</div>
+{{ with .Params.phone }}
+<div class="row">
+    <div class="col"><strong>Phone</strong></div>
+    <div class="col">{{ . }}</div>
+</div>
+{{ end }}
+<div class="row">
+    <div class="col"><strong>Email</strong></div>
+    <div class="col"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>
+</div>
+{{ with .Params.website }}
+<div class="row">
+    <div class="col"><strong>Website</strong></div>
+    <div class="col"><a href="{{ . }}">{{ . }}</a></div>
+</div>
+{{ end }}
+<div class="row">
+    <div class="col"><strong>Other links</strong></div>
+    <div class="col">
+        {{ with .Params.github }}
+        <a href="https://github.com/{{ . }}">
+            <img style="width: 25; height: 25; filter: invert(100%); object-fit: scale; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
+        </a>
+        {{end}}
+        {{ with .Params.orcid }}
+        <a href="https://orcid.org/{{ . }}">
+            <img style="width: 25; height: 25; object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
+        </a>
+        {{ end }}
+    </div>
+</div>
+</div>
+</div>
+
+{{ .Content }}
+
+{{ with partial "get-publications.html" (dict "people" (slice .) "page" .) }}
+    <h3 class="display-5 pb-1">Publications</h3>
+    {{ partial "list-publications.html" . }}
+{{ end }}
 {{ end }}
