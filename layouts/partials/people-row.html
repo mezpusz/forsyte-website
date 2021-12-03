@@ -2,6 +2,8 @@
     {{ $div := (eq (mod $index $.mod) 0) }}
     {{ if (and $div (ne $index 0)) }}</div>{{ end }}
     {{ if $div }}<div class="row my-2">{{ end }}
-    {{ partial "person-small.html" (dict "person" $person "mod" $.mod) }}
+    <div class="col-{{ (div 12 $.mod) }}">
+        {{ partial "person-small.html" $person }}
+    </div>
 {{ end }}
 </div>

@@ -1,12 +1,10 @@
 
-<div class="col-{{ (div 12 .mod) }}">
-    <div class="media position-relative shadow-sm primary_bg" style="width: 17rem;">
-        <img style="width: 70; height: 70; object-fit: cover" src="{{ .person.Params.image }}" class="mr-2">
-        <div class="media-body">
-            <a href="{{ .person.Permalink }}" class="secondary_link stretched-link"><p class="card-title h5-small">{{ .person.Params.name }}</p></a>
-            {{ range .person.Params.roles }}
-                <p class="small">{{ partial "rolesingular.html" . }}</p>
-            {{ end }}
-        </div>
+<div class="media position-relative shadow-sm primary_bg" style="width: 17rem;">
+    <img style="width: 70; height: 70; object-fit: cover" src="{{ .Params.image }}" class="mr-2">
+    <div class="media-body">
+        <a href="{{ .Permalink }}" class="secondary_link stretched-link"><p class="card-title h5-small">{{ .Params.name }}</p></a>
+        {{ range .Params.roles }}
+            <p class="small">{{ partial "rolesingular.html" . }}</p>
+        {{ end }}
     </div>
 </div>
