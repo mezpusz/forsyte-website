@@ -1,3 +1,29 @@
+<div class="row">
+<div class="col-1">
+{{ $fa_tag := 0 }}
+{{ $type := .publication.type }}
+{{ if (or (eq .publication.type "book") (eq .publication.type "chapter")) }}
+    {{ $fa_tag = "book" }}
+{{ end }}
+{{ if eq .publication.type "thesis" }}
+    {{ $fa_tag = "graduation-cap" }}
+    {{ with .publication.genre }}
+        {{ $type = . }}
+    {{ end }}
+{{ end }}
+{{ if (or (eq .publication.type "article-journal") (eq .publication.type "paper-conference")) }}
+    {{ $fa_tag = "newspaper-o" }}
+{{ end }}
+{{ if (or (eq .publication.type "manuscript") (eq .publication.type "report")) }}
+    {{ $fa_tag = "file-text" }}
+{{ end }}
+{{ if $fa_tag }}
+    <i class="fa fa-{{ $fa_tag }} fa-2x" title="{{ $type }}"></i>
+{{ else }}
+    {{ .publication.type }}
+{{ end }}
+</div>
+<div class="col-11">
 <strong>{{ .publication.title }}</strong>
 {{ $line0 := slice }}
 {{ range $index, $a := .publication.author }}
@@ -39,3 +65,5 @@
     <br>{{ delimit . " " }}
 {{ end }}
 <hr/>
+</div>
+</div>

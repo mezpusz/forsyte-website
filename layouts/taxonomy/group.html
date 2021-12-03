@@ -33,9 +33,7 @@
             <h5>Publications</h5>
         </th>
         <td class="align-middle">
-        {{ range . }}
-            {{ partial "publication.html" . }}
-        {{ end }}
+        {{ partial "list-publications.html" . }}
         </td>
     {{ end }}
     </tr>

@@ -1,10 +1,6 @@
 {{ define "main" }}
-    <div class="page-header">
-        <h3 class="display-5">Publications</h2>
-    </div>
+    <h3 class="display-5 pb-2">Publications</h2>
     {{ with partial "person-publications.html" (dict "people" (.Site.GetPage "section" "people").Pages "allowNoAuthor" true "page" .) }}
-        {{ range . }}
-            {{ partial "publication.html" . }}
-        {{ end }}
+        {{ partial "list-publications.html" . }}
     {{ end }}
 {{ end }}

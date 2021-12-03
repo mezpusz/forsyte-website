@@ -68,10 +68,6 @@
 {{ .Content }}
 
 {{ with partial "person-publications.html" (dict "people" (slice .) "page" .) }}
-<div class="page-header">
-    <h3 class="display-5">Publications</h3>
-    {{ range . }}
-        {{ partial "publication.html" . }}
-    {{ end }}
-</div>
+    <h3 class="display-5 pb-1">Publications</h3>
+    {{ partial "list-publications.html" . }}
 {{ end }}
