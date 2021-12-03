@@ -3,7 +3,7 @@
 {{ range $index, $a := .publication.author }}
     {{ $name := (partial "print-name.html" $a) }}
     {{ with (index $.people_links $name) }}
-        {{ $name = (printf "<a class=\"author_link\" href=\"%s\">%s</a>" . $name) }}
+        {{ $name = (printf "<a class=\"author_link\" href=\"%v\">%v</a>" . $name) }}
     {{ end }}
     {{ $line0 = $line0 | append $name }}
 {{ end }}
@@ -13,13 +13,13 @@
 
 {{ $line1 := slice }}
 {{ with (index .publication "container-title") }}
-    {{ $line1 = $line1 | append (printf "<em>%s</em>" .) }}
+    {{ $line1 = $line1 | append (printf "<em>%v</em>" .) }}
 {{ end }}
 {{ with .publication.volume }}
-    {{ $line1 = $line1 | append (printf "volume %d" .) }}
+    {{ $line1 = $line1 | append (printf "volume %v" .) }}
 {{ end }}
 {{ with .publication.page }}
-    {{ $line1 = $line1 | append (printf "pages %s" .) }}
+    {{ $line1 = $line1 | append (printf "pages %v" .) }}
 {{ end }}
 {{ with .publication.issued }}
     {{ $line1 = $line1 | append . }}
@@ -30,10 +30,10 @@
 
 {{ $line2 := slice }}
 {{ with .publication.url }}
-    {{ $line2 = $line2 | append (printf "<a href=\"%s\">[pdf]</a>" .) }}
+    {{ $line2 = $line2 | append (printf "<a href=\"%v\">[pdf]</a>" .) }}
 {{ end -}}
 {{- with .publication.doi }}
-    {{ $line2 = $line2 | append (printf "<a href=\"https://doi.org/%s\">[doi]</a>" .) }}
+    {{ $line2 = $line2 | append (printf "<a href=\"https://doi.org/%v\">[doi]</a>" .) }}
 {{ end }}
 {{ with $line2 }}
     <br>{{ delimit . " " }}

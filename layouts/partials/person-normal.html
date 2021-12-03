@@ -19,7 +19,7 @@
             <div class="col">
             {{ range $index, $group := . }}
                 {{- if gt $index 0 }}, {{ end -}}
-                {{ with $.Site.GetPage (printf "/groups/%s" $group) -}}
+                {{ with $.Site.GetPage (printf "/groups/%v" $group) -}}
                     <a href="{{ .Permalink }}">{{ .Params.name }}</a>
                 {{- end -}}
             {{- end -}}

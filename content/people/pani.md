@@ -1,7 +1,7 @@
 ---
 name: "Thomas Pani"
 groups: []
-roles: ["postdoc"]
+roles: ["phd"]
 website: "http://thpani.net/"
 email: "pani@forsyte.at"
 phone: "+43 (1) 58801 – 184 09"
