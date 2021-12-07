@@ -1,11 +1,10 @@
 
 {{ define "main" }}
-    {{ $people := .Site.GetPage "section" "people" }}
-    {{ $profs := (where $people.Pages "Params.roles" "intersect" (slice "professor")) }}
-    {{ $scientific := (where $people.Pages "Params.roles" "intersect" (slice "postdoc" "phd")) }}
-    {{ $admin := (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
-    {{ $alumni := (where $people.Pages "Params.former_member" true) }}
-    {{ $other := where $people.Pages "" "not in" $profs }}
+    {{ $people := (.Site.GetPage "section" "people").Pages }}
+    {{ $profs := (where $people "Params.roles" "intersect" (slice "professor")) }}
+    {{ $scientific := (where $people "Params.roles" "intersect" (slice "postdoc" "phd")) }}
+    {{ $admin := (where $people "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
+    {{ $other := $people | complement $profs $scientific $admin }}
 
     {{ with (where $profs "Params.former_member" false) }}
         <h3 class="display-5 pb-1">Professors</h3>
@@ -29,7 +28,7 @@
     {{ end }}
     {{ with $other }}
         <h3 class="display-5 pb-1">Other staff</h3>
-        <!-- {{ partial "people-row.html" (dict "people" $other "mod" 4) }} -->
+        {{ partial "people-row.html" (dict "people" $other "mod" 4) }}
         <hr/>
     {{ end }}
     {{ with (where $scientific "Params.former_member" true) }}
