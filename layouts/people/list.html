@@ -1,4 +1,39 @@
 
 {{ define "main" }}
-    {{ partial "people-row.html" (dict "people" .Pages "mod" 4) }}
+    {{ $people := .Site.GetPage "section" "people" }}
+    {{ $profs := (where $people.Pages "Params.roles" "intersect" (slice "professor")) }}
+    {{ $scientific := (where $people.Pages "Params.roles" "intersect" (slice "postdoc" "phd")) }}
+    {{ $admin := (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
+    {{ $alumni := (where $people.Pages "Params.former_member" true) }}
+    {{ $other := where $people.Pages "" "not in" $profs }}
+
+    {{ with (where $profs "Params.former_member" false) }}
+        <h3 class="display-5 pb-1">Professors</h3>
+        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        <hr/>
+    {{ end }}
+    {{ with (where $profs "Params.former_member" true) }}
+        <h3 class="display-5 pb-1">Former Professors</h3>
+        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        <hr/>
+    {{ end }}
+    {{ with (where $scientific "Params.former_member" false) }}
+        <h3 class="display-5 pb-1">Scientific staff</h3>
+        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        <hr/>
+    {{ end }}
+    {{ with $admin }}
+        <h3 class="display-5 pb-1">Administrative staff</h3>
+        {{ partial "people-row.html" (dict "people" $admin "mod" 4) }}
+        <hr/>
+    {{ end }}
+    {{ with $other }}
+        <h3 class="display-5 pb-1">Other staff</h3>
+        <!-- {{ partial "people-row.html" (dict "people" $other "mod" 4) }} -->
+        <hr/>
+    {{ end }}
+    {{ with (where $scientific "Params.former_member" true) }}
+        <h3 class="display-5 pb-1">Alumni</h3>
+        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+    {{ end }}
 {{ end }}

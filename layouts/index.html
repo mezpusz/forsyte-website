@@ -1,18 +1,7 @@
 {{ define "main" }}
 <div class="row">
 <div class="col-9">
-    <h3 class="display-5 pb-1">Research groups</h3>
-    {{ range $groupname, $group := .Site.Taxonomies.groups }}
-    <h5 class="py-2"><a class="primary_link" href="{{ "/groups/" | relLangURL}}{{ $groupname | urlize }}">{{ $group.Page.Params.name }}</a></h5>
-    {{ partial "people-row.html" (dict "people" (where $group "Params.alumni" false) "mod" 3) }}
-    {{ end }}
-    {{ $people := .Site.GetPage "section" "people" }}
-    <hr/>
-    <h3 class="display-5 pb-1">Administrative staff</h3>
-    {{ partial "people-row.html" (dict "people" (where $people.Pages "Params.roles" "intersect" (slice "office-admin" "system-admin")) "mod" 3) }}
-    <hr/>
-    <h3 class="display-5 pb-1">Alumni</h3>
-    {{ partial "people-row.html" (dict "people" (where $people.Pages ".Params.alumni" true) "mod" 3) }}
+    {{ partial "research-groups.html" . }}
 </div>
 <div class="col-3">
     <h3 class="display-5 pb-1">Recent news</h3>

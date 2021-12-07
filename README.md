@@ -24,7 +24,7 @@ Note that any number of roles and groups can be assigned to a person (including 
 and how the person appears on the website. E.g. a person can appear in multiple groups and also as
 other staff.
 
-If a person graduates, their `alumni` flag should be assigned `true` to show them in the Alumni section.
+If a person graduates, their `former_member` flag should be assigned `true` to show them in the Former Professors/Alumni section.
 
 ## Adding news posts
 A news post article be added with the following command:
