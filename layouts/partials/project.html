@@ -1,0 +1,18 @@
+<div class="media">
+    <img src="{{ .Params.logo }}" class="mr-2" style="width: 200; height: 100; object-fit: contain;">
+    <div class="media-body">
+        <p class="card-title h5">{{ .Params.name }}</p></a>
+        {{ with .Params.website }}
+            <p><strong>Website:</strong> <a href="{{ . }}">{{ . }}</a></p>
+        {{ end }}
+        {{ with .Params.funding }}
+            {{ $funding_links := slice }}
+            {{ range . }}
+                {{ $funding_links = $funding_links | append (printf "<a href=\"%v\">%v</a>" .link .name) }}
+            {{ end }}
+            <p><strong>Funding:</strong> {{ delimit $funding_links ", " }}</p>
+        {{ end }}
+        {{ .Content }}
+    </div>
+</div>
+<hr/>
