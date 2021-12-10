@@ -9,15 +9,27 @@
         <p class="lead text-muted">Systems Engineering</p>
     </div>
     <div class="row justify-content-around">
-        <a class="col-3" href="{{ $rse.Permalink }}"><img src="{{ $rse.Params.logo }}"/ alt="{{ $rse.Params.name }}"></a>
-        <a class="col-3" href="{{ $cav.Permalink }}"><img src="{{ $cav.Params.logo }}"/ alt="{{ $cav.Params.name }}"></a>
+    {{ range slice $rse $cav }}
+        <a class="col-3 d-flex justify-content-center" href="{{ .Permalink }}">
+            <figure>
+                <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
+                <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
+            </figure>
+        </a>
+    {{ end }}
     </div>
     <div class="row justify-content-center">
         <img class="col-5" src="/images/forsyte.png"/>
     </div>
     <div class="row justify-content-around">
-        <a class="col-3 w-25" href="{{ $apre.Permalink }}"><img style="object-fit: cover" src="{{ $apre.Params.logo }}"/ alt="{{ $apre.Params.name }}"></a>
-        <a class="col-3" href="{{ $pav.Permalink }}"><img src="{{ $pav.Params.logo }}"/ alt="{{ $pav.Params.name }}"></a>
+    {{ range slice $apre $pav }}
+        <a class="col-3 d-flex justify-content-center" href="{{ .Permalink }}">
+            <figure>
+                <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
+                <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
+            </figure>
+        </a>
+    {{ end }}
     </div>
     <div class="row justify-content-center">
         <p class="lead text-muted mb-2">Formal Methods</p>

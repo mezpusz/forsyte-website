@@ -1,15 +1,27 @@
 {{ define "main" }}
-<div class="row">
-<div class="col-9">
-    {{ partial "research-groups.html" . }}
-</div>
-<div class="col-3">
+{{ partial "research-groups.html" . }}
     <h3 class="display-5 pb-1">Recent news</h3>
-    {{ range (first 4 (.Site.GetPage "section" "news").Pages) }}
-    <div class="my-3" style="height:250;">
-    {{ partial "news-small.html" . }}
-    </div>
+    <div id="news-carousel" class="carousel" data-interval="false">
+    <div class="carousel-inner">
+    {{ $news := .Site.GetPage "section" "news" }}
+    {{ $paginator := $news.Paginate $news.Pages 4 }}
+    {{ range $index, $page := $paginator.Pagers }}
+        <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+            <div class="row my-3">
+            {{ range .Pages }}
+                <div class="col-3" style="height:250;">
+                {{ partial "news-small.html" . }}
+                </div>
+            {{ end }}
+            </div>
+            <a class="btn btn-light" data-target="#news-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+            {{ range $index2, $page := $paginator.Pagers }}
+                <a class="btn btn-light {{ if (eq $index $index2) }}disabled{{ end }}" data-target="#news-carousel" data-slide-to="{{ $index2 }}">{{ add $index2 1 }}</button>
+            {{ end }}
+            <a class="btn btn-light" data-target="#news-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        </div>
     {{ end }}
-</div>
+    </div>
+    </div>
 </div>
 {{ end }}

@@ -1,6 +1,5 @@
 
 {{ define "main" }}
-    <h3 class="display-5 pb-1">Research projects</h3>
     <p>The Formal Methods in Systems Engineering Group at Vienna University of Technology is concerned with research and development in the following areas and projects:</p>
     {{ range where .Pages ".Params.former" false }}
         {{ partial "project.html" . }}
