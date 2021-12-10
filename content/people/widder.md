@@ -1,7 +1,7 @@
 ---
 name: "Josef Widder"
 groups: []
-role: "Professor"
+roles: ["professor"]
 email: "widder@forsyte.at"
 phone: "+43..."
 image: "https://forsyte.at/wp-content/uploads/widder2015-200x300.jpg"

@@ -1,7 +1,7 @@
 ---
 name: "Andreas Fellner"
-groups: []
-roles: []
+groups: ["rse"]
+roles: ["phd"]
 email: "fellner@forsyte.at"
 phone: "+43..."
 image: "https://forsyte.at/wp-content/uploads/DSC_2597-300x300.jpg"

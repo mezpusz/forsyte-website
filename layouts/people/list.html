@@ -3,7 +3,7 @@
     {{ $people := (.Site.GetPage "section" "people").Pages }}
     {{ $profs := (where $people "Params.roles" "intersect" (slice "professor")) }}
     {{ $scientific := (where $people "Params.roles" "intersect" (slice "postdoc" "phd")) }}
-    {{ $admin := (where $people "Params.roles" "intersect" (slice "office-admin" "system-admin")) }}
+    {{ $admin := (where $people "Params.roles" "intersect" (slice "office-admin" "system-admin" "vcla-manager")) }}
     {{ $other := $people | complement $profs $scientific $admin }}
 
     {{ with (where $profs "Params.former_member" false) }}

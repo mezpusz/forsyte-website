@@ -1,6 +1,6 @@
 ---
 name: "Adrian Rebola Pardo"
-groups: []
+groups: ["rse"]
 roles: ["phd"]
 email: "arebolap@forsyte.at"
 phone: "+43 (1) 58801 – 740 074"

@@ -1,7 +1,7 @@
 ---
 name: "Andreas Holzer"
 groups: []
-roles: []
+roles: ["postdoc"]
 website: "https://forsyte.at"
 email: "name@forsyte.at"
 phone: "+43..."

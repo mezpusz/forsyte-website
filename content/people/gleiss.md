@@ -1,7 +1,7 @@
 ---
 name: "Bernhard Gleiss"
-groups: []
-roles: []
+groups: ["apre"]
+roles: ["phd"]
 website: "https://forsyte.at"
 email: "bgleiss@forsyte.at"
 phone: "+43..."

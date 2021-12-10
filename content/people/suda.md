@@ -1,7 +1,7 @@
 ---
 name: "Martin Suda"
-groups: []
-roles: []
+groups: ["apre"]
+roles: ["postdoc"]
 website: "https://forsyte.at"
 email: "name@forsyte.at"
 phone: "+43..."

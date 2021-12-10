@@ -1,7 +1,7 @@
 ---
 name: "Pavel Čadek"
 groups: []
-roles: []
+roles: ["phd"]
 website: "https://forsyte.at"
 email: "pcadek@forsyte.at"
 phone: "+43..."

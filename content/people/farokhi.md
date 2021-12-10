@@ -1,7 +1,7 @@
 ---
 name: "Soodeh Farokhi"
 groups: []
-roles: []
+roles: ["phd"]
 website: "https://forsyte.at"
 email: "farokhi@forsyte.at"
 phone: "+43..."

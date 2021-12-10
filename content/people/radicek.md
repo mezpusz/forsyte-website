@@ -1,7 +1,7 @@
 ---
 name: "Ivan Radiček"
 groups: []
-roles: []
+roles: ["phd"]
 website: "https://forsyte.at"
 email: "name@forsyte.at"
 phone: "+43..."

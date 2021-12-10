@@ -1,7 +1,7 @@
 ---
 name: "Maximilian Jaroschek"
 groups: []
-roles: []
+roles: ["postdoc"]
 website: "http://www.mjaroschek.com"
 email: "name@forsyte.at"
 phone: "+43..."
