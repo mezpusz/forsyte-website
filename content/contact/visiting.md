@@ -9,7 +9,7 @@ layout: staticpage
 </header>
 <section class="format_text">
 <h2><a name="address"></a>Address</h2>
-<p>We are located at Favoritenstrasse 9–11, 1040 Vienna on the third floor of the building. The main entrance to our floor is via Staircase 3 (“Stiege 3”). At the door, use the telephone to call the <a title="People" href="http://forsyte.at/people/">person you’re visiting</a>&nbsp;or one of our secretaries who will let you in.&nbsp;<a href="https://www.google.com/maps/place/FORSYTE+–+Formal+Methods+in+Systems+Engineering/@48.1949016,16.3701504,17z" target="_blank" rel="noopener">View Map</a></p>
+<p>We are located at Favoritenstrasse 9–11, 1040 Vienna on the third floor of the building. The main entrance to our floor is via Staircase 3 (“Stiege 3”). At the door, use the telephone to call the <a title="People" href="/people/">person you’re visiting</a>&nbsp;or one of our secretaries who will let you in.&nbsp;<a href="https://www.google.com/maps/place/FORSYTE+–+Formal+Methods+in+Systems+Engineering/@48.1949016,16.3701504,17z" target="_blank" rel="noopener">View Map</a></p>
 <h2><a name="accomodation"></a>Accommodation</h2>
 <p>The following hotels that are located&nbsp;very close (less than 5 minutes walk) to FORSYTE:</p>
 <ul>
@@ -20,7 +20,7 @@ layout: staticpage
 <p>If you are on a tight budget you might want to consider the recently opended city hostel&nbsp;<a href="http://www.wombats-hostels.com/vienna/the-naschmarkt/" target="_blank" rel="noopener">Wombats</a>.&nbsp;They offer single rooms for about €30, rooms shared by several people are even&nbsp;much cheaper. Please make sure to select “THE NASCHMARKT” as other branches of&nbsp;the hostel are located further away.</p>
 <p>Otherwise you can look yourself for&nbsp;hotels at&nbsp;<a href="http://www.hotels.com" target="_blank" rel="noopener">hotels.com</a>&nbsp;or <a href="http://www.tripadvisor.com/Hotels-g190454-Vienna-Hotels.html" target="_blank" rel="noopener">TripAdvisor</a>.&nbsp;As long as the hotel is close to an underground station it should be easy to&nbsp;commute to TU Vienna.</p>
 <h2><a name="visa"></a>Visa</h2>
-<p>Visitors should be aware about Visa requirements, and should plan travel well in advance (processing of a visa request can take up to 6 weeks). Austria is a Schengen Country, i.e. citizens of signatory states do not require a visa for a stay up to three months in length. For further information on obtaining a Visa, please refer to the&nbsp;<a href="http://www.bmeia.gv.at/aussenministerium/buergerservice/pass-und-visum/visainformation-englisch.html" target="_blank" rel="noopener">Ministry for European and International Affairs</a>.&nbsp;Should a letter of invitation be required as part of a Visa application, please <a title="Contact" href="http://forsyte.at/contact/">contact us</a>&nbsp;including the following data:</p>
+<p>Visitors should be aware about Visa requirements, and should plan travel well in advance (processing of a visa request can take up to 6 weeks). Austria is a Schengen Country, i.e. citizens of signatory states do not require a visa for a stay up to three months in length. For further information on obtaining a Visa, please refer to the&nbsp;<a href="http://www.bmeia.gv.at/aussenministerium/buergerservice/pass-und-visum/visainformation-englisch.html" target="_blank" rel="noopener">Ministry for European and International Affairs</a>.&nbsp;Should a letter of invitation be required as part of a Visa application, please <a title="Contact" href="/contact/">contact us</a>&nbsp;including the following data:</p>
 <ul>
 <li>Full name (as written in the passport)</li>
 <li>Affiliation: organization/company name</li>
@@ -70,8 +70,7 @@ The tram holds a bit north of Karlsplatz subway station. Walk south on Akademies
 <ul>
 <li><a href="http://www.nytimes.com/2012/01/08/travel/36-hours-vienna.html" target="_blank" rel="noopener">this NYTimes.com Travel article</a>&nbsp;on how to spend 36 hours in Vienna, as well as</li>
 <li><a href="http://travel.cnn.com/cnngo-tv-vienna-050246" target="_blank" rel="noopener">these&nbsp;CNNGo TV videos</a> exploring young artists’ and athletes’ favourite places in Vienna.</li>
-</ul>
-<div class="fix"><!----></div></section>
+</ul></section>
 			</article>
 </div>
 </div></div>

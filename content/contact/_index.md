@@ -19,7 +19,7 @@ Austria</p>
 <p><a title="Visiting FORSYTE" href="/contact/visiting/">Visiting FORSYTE</a></p>
 <h2>Map</h2>
 <p><iframe style="border: 0;" src="https://www.google.com/maps/embed/v1/place?q=FORSYTE%20%E2%80%93%20Formal%20Methods%20in%20Systems%20Engineering%2C%20Favoritenstra%C3%9Fe%2C%20Vienna%2C%20Austria" width="600" height="450" frameborder="0"></iframe></p>
-<p>We are located at <em>Favoritenstrasse 9–11, 1040 Vienna</em>. The main entrance to our floor is via <em>Staircase 3 (“Stiege 3”)</em> on the <em>third floor</em> of the building. At the door, use the telephone to call the&nbsp;<a title="People" href="http://forsyte.at/people/" data-slimstat-tracking="false" data-slimstat-callback="true" data-slimstat-type="2">person you’re visiting</a>. <a href="http://forsyte.at/contact/visiting/" data-slimstat-tracking="false" data-slimstat-callback="true" data-slimstat-type="2">More information</a>.</p>
+<p>We are located at <em>Favoritenstrasse 9–11, 1040 Vienna</em>. The main entrance to our floor is via <em>Staircase 3 (“Stiege 3”)</em> on the <em>third floor</em> of the building. At the door, use the telephone to call the&nbsp;<a title="People" href="/people/" data-slimstat-tracking="false" data-slimstat-callback="true" data-slimstat-type="2">person you’re visiting</a>. <a href="/contact/visiting/" data-slimstat-tracking="false" data-slimstat-callback="true" data-slimstat-type="2">More information</a>.</p>
 </div> <div class="ezcol ezcol-one-third ezcol-last">
 <h2>Office</h2>
 <p><strong>Secretary</strong><br>
@@ -27,8 +27,7 @@ Office hours: Mon-Thu 9:00-11:00<br>
 Room: HD 03 19<br>
 Phone: +43 (1) 58801 18403<br>
 E-Mail: <a href="mailto:sek@forsyte.tuwien.ac.at" target="_blank" rel="noopener noreferrer">sek@forsyte.tuwien.ac.at</a><br>
-</p></div><div class="ezcol-divider"></div><p></p>
-<div class="fix"><!----></div></section>
+</p></div><div class="ezcol-divider"></div><p></p></section>
 			</article>
 </div>
 </div></div>
