@@ -1,11 +1,9 @@
 ---
 name: "Vedran Marinkovic"
+tiss_id: 61837
 groups: ["pav"]
 roles: ["phd"]
 email: "vmarinko@forsyte.at"
-phone: "+43 (1) 58801 – 192 412"
-image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
 former_member: false
 ---
 

@@ -1,11 +1,9 @@
 ---
 name: "Anton Varonka"
+tiss_id: 356702
 groups: ["apre"]
 roles: ["phd"]
 email: "anton.varonka@tuwien.ac.at"
-phone: "+43..."
-image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HC0300"
 former_member: false
 ---
 

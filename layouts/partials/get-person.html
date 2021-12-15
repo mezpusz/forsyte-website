@@ -1,0 +1,2 @@
+{{ $person := getJSON (printf "https://tiss.tuwien.ac.at/api/person/v22/id/%v" .) }}
+{{ return $person }}

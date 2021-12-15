@@ -1,12 +1,11 @@
 ---
 name: "Annu Gmeiner"
+tiss_id: 
 groups: []
 roles: []
 website: "https://forsyte.at"
 email: "name@forsyte.at"
-phone: "+43..."
 image: "https://forsyte.at/wp-content/uploads/2011/11/P10307551-225x300.jpg"
-room: "HC0300"
 former_member: true
 citation_aliases:
 ---

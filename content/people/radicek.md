@@ -1,12 +1,11 @@
 ---
 name: "Ivan Radiček"
+tiss_id: 
 groups: []
 roles: ["phd"]
 website: "https://forsyte.at"
 email: "name@forsyte.at"
-phone: "+43..."
 image: "http://forsyte.at/wp-content/uploads/ivanradicek.png"
-room: "HC0300"
 former_member: true
 citation_aliases:
 ---

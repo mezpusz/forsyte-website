@@ -1,11 +1,10 @@
 ---
 name: "Yulia Demyanova"
+tiss_id: 
 groups: []
 roles: []
 email: "demy@forsyte.at"
-phone: "+43..."
 image: "http://forsyte.at/wp-content/uploads/yulia.jpeg"
-room: "HC0300"
 former_member: true
 citation_aliases:
 ---

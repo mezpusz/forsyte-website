@@ -1,7 +1,38 @@
 {{ define "main" }}
+
+{{ $rooms := slice }}
+{{ with .Params.room }}
+    {{ $rooms = slice . }}
+{{ end }}
+{{ $orcid := .Params.orcid }}
+{{ $phone := .Params.phone }}
+{{ $oid := "" }}
+{{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"}}
+{{ with .Params.tiss_id }}
+    {{ $tiss := partial "get-person.html" . }}
+    {{ range $tiss.employee }}
+        {{ with .room }}
+            {{ $rooms = union $rooms (slice .room_code) }}
+        {{ end }}
+    {{ end }}
+    {{ if (and $tiss.orcid (eq $orcid nil)) }}
+        {{ $orcid = $tiss.orcid }}
+    {{ end }}
+    {{ if (and $tiss.main_phone_number (eq $phone nil)) }}
+        {{ $phone = $tiss.main_phone_number }}
+    {{ end }}
+    {{ $oid = (string $tiss.oid) }}
+    {{ with $tiss.picture_uri }}
+        {{ $image = (printf "https://tiss.tuwien.ac.at%v" .) }}
+    {{ end }}
+{{ end }}
+{{ with .Params.image }}
+    {{ $image = . }}
+{{ end }}
+
 <div class="row">
 <div class="col-3">
-<img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ .Params.image }}">
+<img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ $image }}">
 </div><div class="col-9">
 <h1>{{ .Params.name }}</h1>
 {{ with .Params.roles }}
@@ -28,11 +59,17 @@
         {{ end }}
     {{ end }}
 </div>
+{{ if (len $rooms) }}
 <div class="row">
     <div class="col"><strong>Room</strong></div>
-    <div class="col"><a target="_blank" href="http://forsyte.at/floorplan/?mark={{ .Params.room }}">{{ .Params.room }}</a> (<a title="Visiting FORSYTE" href="http://forsyte.at/contact/visiting/">how to get there</a>)</div>
+    <div class="col">
+    {{ range $index, $room := $rooms }}
+        <a target="_blank" href="https://tuw-maps.tuwien.ac.at/?q={{ $room }}">{{ $room }}</a>
+    {{ end }}
+    (<a title="Visiting FORSYTE" href="/contact/visiting/">how to get there</a>)</div>
 </div>
-{{ with .Params.phone }}
+{{ end }}
+{{ with $phone }}
 <div class="row">
     <div class="col"><strong>Phone</strong></div>
     <div class="col">{{ . }}</div>
@@ -56,7 +93,7 @@
             <img style="width: 25; height: 25; filter: invert(100%); object-fit: scale; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
         </a>
         {{end}}
-        {{ with .Params.orcid }}
+        {{ with $orcid }}
         <a href="https://orcid.org/{{ . }}">
             <img style="width: 25; height: 25; object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
         </a>
@@ -67,6 +104,13 @@
 </div>
 
 {{ .Content }}
+
+{{ if $oid }}
+{{ with partial "get-courses.html" (slice $oid) }}
+    <h3 class="display-5 pb-1">Teaching</h3>
+    {{ partial "list-courses.html" . }}
+{{ end }}
+{{ end }}
 
 {{ with partial "get-publications.html" (dict "people" (slice .) "page" .) }}
     <h3 class="display-5 pb-1">Publications</h3>

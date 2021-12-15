@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Course name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Semester</th>
+            <th scope="col">TISS link</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{ range . }}
+        <tr>
+            <td>{{ .title.en }}</td>
+            <td>{{ .courseType }}</td>
+            <td>{{ .semesterCode }}</td>
+            <td><a href="{{ .url }}" target="_blank"><i class="fa fa-external-link"></i></a></td>
+        </tr>
+    {{ end }}
+    </tbody>
+</table>

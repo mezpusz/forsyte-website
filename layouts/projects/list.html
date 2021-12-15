@@ -1,6 +1,6 @@
 
 {{ define "main" }}
-    <p>The Formal Methods in Systems Engineering Group at Vienna University of Technology is concerned with research and development in the following areas and projects:</p>
+    {{ .Content }}
     {{ range where .Pages ".Params.former" false }}
         {{ partial "project.html" . }}
     {{ end }}

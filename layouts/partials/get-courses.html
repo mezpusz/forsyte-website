@@ -1,0 +1,13 @@
+{{ $courses := slice }}
+{{ with resources.Get "https://tiss.tuwien.ac.at/api/course/orgUnit/E192" | transform.Unmarshal }}
+    {{ range .course }}
+        {{ $oid := slice }}
+        {{ with .lecturers.oid }}
+            {{ $oid = $oid | append (cond (reflect.IsSlice .) . (slice .)) }}
+        {{ end }}
+        {{ if intersect $oid $ }}
+            {{ $courses = $courses | append . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return $courses }}

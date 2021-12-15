@@ -1,0 +1,14 @@
+{{ define "main" }}
+    {{ .Content }}
+    {{ $oids := slice }}
+    {{ range (.Site.GetPage "section" "people").Pages }}
+        {{ with .Params.tiss_id }}
+            {{ if (gt . 0) }}
+                {{ $person := (partial "get-person.html" .) }}
+                {{ $oids = $oids | append (string $person.oid) }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $courses := partial "get-courses.html" $oids }}
+    {{ partial "list-courses.html" $courses }}
+{{ end }}

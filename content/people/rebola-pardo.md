@@ -1,11 +1,9 @@
 ---
 name: "Adrian Rebola Pardo"
+tiss_id: 296535
 groups: ["rse"]
 roles: ["phd"]
 email: "arebolap@forsyte.at"
-phone: "+43 (1) 58801 – 740 074"
-image: "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"
-room: "HA0305"
 former_member: false
 ---
 
