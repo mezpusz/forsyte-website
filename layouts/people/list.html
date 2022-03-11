@@ -1,18 +1,18 @@
 
 {{ define "main" }}
     {{ $people := (.Site.GetPage "section" "people").Pages }}
-    {{ $profs := (where $people "Params.roles" "intersect" (slice "professor")) }}
+    {{ $profs := (where $people "Params.roles" "intersect" (slice "professor" "privatdozent")) }}
     {{ $scientific := (where $people "Params.roles" "intersect" (slice "postdoc" "phd")) }}
     {{ $admin := (where $people "Params.roles" "intersect" (slice "office-admin" "system-admin" "vcla-manager")) }}
     {{ $other := $people | complement $profs $scientific $admin }}
 
     {{ with (where $profs "Params.former_member" false) }}
-        <h3 class="display-5 pb-1">Professors</h3>
+        <h3 class="display-5 pb-1">Faculty</h3>
         {{ partial "people-row.html" (dict "people" . "mod" 4) }}
         <hr/>
     {{ end }}
     {{ with (where $profs "Params.former_member" true) }}
-        <h3 class="display-5 pb-1">Former Professors</h3>
+        <h3 class="display-5 pb-1">Former Faculty</h3>
         {{ partial "people-row.html" (dict "people" . "mod" 4) }}
         <hr/>
     {{ end }}
