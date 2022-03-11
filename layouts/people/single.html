@@ -6,6 +6,7 @@
 {{ end }}
 {{ $orcid := .Params.orcid }}
 {{ $phone := .Params.phone }}
+{{ $email := .Params.email }}
 {{ $oid := "" }}
 {{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"}}
 {{ with .Params.tiss_id }}
@@ -20,6 +21,9 @@
     {{ end }}
     {{ if (and $tiss.main_phone_number (eq $phone nil)) }}
         {{ $phone = $tiss.main_phone_number }}
+    {{ end }}
+    {{ if (and $tiss.main_email (eq $email nil)) }}
+        {{ $email = $tiss.main_email }}
     {{ end }}
     {{ $oid = (string $tiss.oid) }}
     {{ with $tiss.picture_uri }}
@@ -75,10 +79,12 @@
     <div class="col">{{ . }}</div>
 </div>
 {{ end }}
+{{ with $email }}
 <div class="row">
     <div class="col"><strong>Email</strong></div>
-    <div class="col"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>
+    <div class="col"><a href="mailto:{{ $email }}">{{ $email }}</a></div>
 </div>
+{{ end }}
 {{ with .Params.website }}
 <div class="row">
     <div class="col"><strong>Website</strong></div>

@@ -1,6 +1,6 @@
 ---
 name: "Vedran Marinkovic"
-tiss_id: 61837
+tiss_id:
 groups: ["pav"]
 roles: ["phd"]
 email: "vmarinko@forsyte.at"
