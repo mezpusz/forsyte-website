@@ -1,12 +1,22 @@
-{{ $courses := slice }}
-{{ with resources.Get "https://tiss.tuwien.ac.at/api/course/orgUnit/E192" | transform.Unmarshal }}
-    {{ range .course }}
-        {{ $oid := slice }}
-        {{ with .lecturers.oid }}
-            {{ $oid = $oid | append (cond (reflect.IsSlice .) . (slice .)) }}
-        {{ end }}
-        {{ if intersect $oid $ }}
-            {{ $courses = $courses | append . }}
+{{ $courses := dict }}
+{{ $semesters := slice }}
+{{ range (seq 2018 (add (int now.Year) 1)) }}
+    {{ $semesters = $semesters | append (slice (printf "%vS" .)) }}
+    {{ $semesters = $semesters | append (slice (printf "%vW" .)) }}
+{{ end }}
+{{ range $semesters }}
+    {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/course/orgUnit/E192?semester=%v" .) | transform.Unmarshal }}
+        {{ range .course }}
+            {{ $oid := slice }}
+            {{ with .lecturers.oid }}
+                {{ $oid = $oid | append (cond (reflect.IsSlice .) . (slice .)) }}
+            {{ end }}
+            {{ if intersect $oid $ }}
+                {{ $course := . }}
+                {{ if (or (not (index $courses .courseNumber)) (gt $course.semesterCode (index $courses .courseNumber).semesterCode )) }}
+                    {{ $courses = merge $courses (dict $course.courseNumber $course) }}
+                {{ end }}
+            {{ end }}
         {{ end }}
     {{ end }}
 {{ end }}

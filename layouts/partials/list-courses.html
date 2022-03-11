@@ -1,15 +1,17 @@
 <table class="table">
     <thead class="thead-light">
         <tr>
+            <th scope="col">Course number</th>
             <th scope="col">Course name</th>
             <th scope="col">Type</th>
-            <th scope="col">Semester</th>
+            <th scope="col">Latest/upcoming Semester</th>
             <th scope="col">TISS link</th>
         </tr>
     </thead>
     <tbody>
-    {{ range . }}
+    {{ range (sort . ".semesterCode" "desc") }}
         <tr>
+            <td>{{ .courseNumber }}</td>
             <td>{{ .title.en }}</td>
             <td>{{ .courseType }}</td>
             <td>{{ .semesterCode }}</td>
