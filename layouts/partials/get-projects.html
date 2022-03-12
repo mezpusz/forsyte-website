@@ -1,0 +1,14 @@
+{{ $projects := slice }}
+{{ range seq 1 7 }}
+    {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/pdb/rest/projectsearch/v2?researchArea=%v" .) | transform.Unmarshal }}
+        {{ range .project }}
+            {{ $project := . }}
+            {{ if (eq .orgunitTid "4744") }}
+                {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/pdb/rest/project/v3/%v" .projectId) | transform.Unmarshal }}
+                    {{ $projects = $projects | append (slice .project) }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return $projects }}

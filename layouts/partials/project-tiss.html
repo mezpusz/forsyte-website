@@ -1,0 +1,11 @@
+<div class="media">
+    <div class="media-body">
+        <p class="card-title h5">{{ .shortDescription }}: {{ .title.en }}</p></a>
+        <p><strong>Begin/end:</strong> {{ .projectBegin }} - {{ .projectEnd }}</p>
+        <p><strong>TISS link:</strong> <a href="https://tiss.tuwien.ac.at/fpl/project/index.xhtml?id={{ (index . "-id") }}" target="_blank"><i class="fa fa-external-link"></i></a></p>
+        {{ with .abstract }}
+            <strong>Description:</strong> {{ .en }}
+        {{ end }}
+    </div>
+</div>
+<hr/>

@@ -1,6 +1,11 @@
 
 {{ define "main" }}
     {{ .Content }}
+    {{ with partial "get-projects.html" . }}
+        {{ range . }}
+            {{ partial "project-tiss.html" . }}
+        {{ end }}
+    {{ end }}
     {{ range where .Pages ".Params.former" false }}
         {{ partial "project.html" . }}
     {{ end }}
