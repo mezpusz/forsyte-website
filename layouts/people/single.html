@@ -56,7 +56,7 @@
             {{ range $index, $group := . }}
                 {{- if gt $index 0 }}, {{ end -}}
                 {{ with $.Site.GetPage (printf "/groups/%v" $group) -}}
-                    <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+                    <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
                 {{- end -}}
             {{- end -}}
             </div>

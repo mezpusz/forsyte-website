@@ -1,5 +1,5 @@
 
-{{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"}}
+{{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.8.4/images/silhouette.svg"}}
 {{ with .Params.tiss_id }}
     {{ $tiss := partial "get-person.html" . }}
     {{ with $tiss.picture_uri }}
@@ -13,7 +13,7 @@
 <div class="media position-relative shadow-sm primary_bg" style="width: 17rem;">
     <img style="width: 70; height: 70; object-fit: cover" src="{{ $image }}" class="mr-2">
     <div class="media-body">
-        <a href="{{ .Permalink }}" class="secondary_link stretched-link"><p class="card-title h5-small">{{ .Params.name }}</p></a>
+        <a href="{{ .RelPermalink }}" class="secondary_link stretched-link"><p class="card-title h5-small">{{ .Params.name }}</p></a>
         {{ range .Params.roles }}
             <p class="small">{{ partial "rolesingular.html" . }}</p>
         {{ end }}

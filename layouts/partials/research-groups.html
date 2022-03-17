@@ -9,7 +9,7 @@
     </div>
     <div class="row justify-content-around">
     {{ range slice $rse $cav }}
-        <a class="col-3 d-flex justify-content-center" href="{{ .Permalink }}">
+        <a class="col-3 d-flex justify-content-center" href="{{ .RelPermalink }}">
             <figure>
                 <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
                 <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
@@ -22,7 +22,7 @@
     </div>
     <div class="row justify-content-around">
     {{ range slice $apre $pav }}
-        <a class="col-3 d-flex justify-content-center" href="{{ .Permalink }}">
+        <a class="col-3 d-flex justify-content-center" href="{{ .RelPermalink }}">
             <figure>
                 <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
                 <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
