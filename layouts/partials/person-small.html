@@ -1,5 +1,5 @@
 
-{{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.8.4/images/silhouette.svg"}}
+{{ $image := "/images/silhouette.svg"}}
 {{ with .Params.tiss_id }}
     {{ $tiss := partial "get-person.html" . }}
     {{ with $tiss.picture_uri }}
