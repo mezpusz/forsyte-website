@@ -35,8 +35,8 @@
 {{ end }}
 
 <div class="row">
-<div class="col-3">
-<img style="width: 250; height: 250; object-fit: cover; object-position: center" src="{{ $image }}">
+<div class="col-3 image-fluid">
+<img style="max-width: 100%; max-height: 100%; object-fit: cover; object-position: center" src="{{ $image }}">
 </div><div class="col-9">
 <h1>{{ .Params.name }}</h1>
 {{ with .Params.roles }}

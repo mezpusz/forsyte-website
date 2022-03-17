@@ -1,8 +1,8 @@
 {{ range $index, $person := .people }}
     {{ $div := (eq (mod $index $.mod) 0) }}
     {{ if (and $div (ne $index 0)) }}</div>{{ end }}
-    {{ if $div }}<div class="row my-2">{{ end }}
-    <div class="col-{{ (div 12 $.mod) }}">
+    {{ if $div }}<div class="row my-3">{{ end }}
+    <div class="col-{{ (div 12 $.mod) }} px-1">
         {{ partial "person-small.html" $person }}
     </div>
 {{ end }}

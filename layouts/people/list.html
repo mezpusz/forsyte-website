@@ -1,5 +1,6 @@
 
 {{ define "main" }}
+    {{ $row_mod := 3 }}
     {{ $people := (.Site.GetPage "section" "people").Pages }}
     {{ $profs := (where $people "Params.roles" "intersect" (slice "professor" "privatdozent")) }}
     {{ $scientific := (where $people "Params.roles" "intersect" (slice "postdoc" "phd")) }}
@@ -8,31 +9,31 @@
 
     {{ with (where $profs "Params.former_member" false) }}
         <h3 class="display-5 pb-1">Faculty</h3>
-        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" . "mod" $row_mod) }}
         <hr/>
     {{ end }}
     {{ with (where $profs "Params.former_member" true) }}
         <h3 class="display-5 pb-1">Former Faculty</h3>
-        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" . "mod" $row_mod) }}
         <hr/>
     {{ end }}
     {{ with (where $scientific "Params.former_member" false) }}
         <h3 class="display-5 pb-1">Scientific staff</h3>
-        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" . "mod" $row_mod) }}
         <hr/>
     {{ end }}
     {{ with $admin }}
         <h3 class="display-5 pb-1">Administrative staff</h3>
-        {{ partial "people-row.html" (dict "people" $admin "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" $admin "mod" $row_mod) }}
         <hr/>
     {{ end }}
     {{ with $other }}
         <h3 class="display-5 pb-1">Other staff</h3>
-        {{ partial "people-row.html" (dict "people" $other "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" $other "mod" $row_mod) }}
         <hr/>
     {{ end }}
     {{ with (where $scientific "Params.former_member" true) }}
         <h3 class="display-5 pb-1">Alumni</h3>
-        {{ partial "people-row.html" (dict "people" . "mod" 4) }}
+        {{ partial "people-row.html" (dict "people" . "mod" $row_mod) }}
     {{ end }}
 {{ end }}
