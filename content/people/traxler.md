@@ -1,6 +1,6 @@
 ---
 name: "Alexandra Traxler"
-tiss_id: 347804
+tiss_id:
 groups: []
 roles: ["vcla-manager"]
 email: "atraxler@forsyte.at"
