@@ -1,10 +1,10 @@
 {{ $projects := slice }}
 {{ range seq 1 7 }}
-    {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/pdb/rest/projectsearch/v2?researchArea=%v" .) | transform.Unmarshal }}
+    {{ with partial "get-data-from-url.html" (printf "https://tiss.tuwien.ac.at/api/pdb/rest/projectsearch/v2?researchArea=%v" .) }}
         {{ range .project }}
             {{ $project := . }}
             {{ if (eq .orgunitTid "4744") }}
-                {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/pdb/rest/project/v3/%v" .projectId) | transform.Unmarshal }}
+                {{ with partial "get-data-from-url.html" (printf "https://tiss.tuwien.ac.at/api/pdb/rest/project/v3/%v" .projectId) }}
                     {{ $projects = $projects | append (slice .project) }}
                 {{ end }}
             {{ end }}

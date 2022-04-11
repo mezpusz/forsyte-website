@@ -5,7 +5,7 @@
     {{ $semesters = $semesters | append (slice (printf "%vW" .)) }}
 {{ end }}
 {{ range $semesters }}
-    {{ with resources.Get (printf "https://tiss.tuwien.ac.at/api/course/orgUnit/E192?semester=%v" .) | transform.Unmarshal }}
+    {{ with partial "get-data-from-url.html" (printf "https://tiss.tuwien.ac.at/api/course/orgUnit/E192?semester=%v" .) }}
         {{ range .course }}
             {{ $oid := slice }}
             {{ with .lecturers.oid }}

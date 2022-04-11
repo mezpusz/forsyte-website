@@ -1,0 +1,13 @@
+{{ $url := . }}
+{{ $data := "" }}
+{{ warnf "Getting data from %#v" $url }}
+{{ with $result := resources.GetRemote $url }}
+    {{ with .Err }}
+        {{ warnf "%s: %#v" .Error .Data}}
+    {{ else }}
+        {{ with .Content | unmarshal }}
+            {{ $data = . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+{{ return $data }}
