@@ -48,64 +48,66 @@
         </h2>
     {{ end }}
 {{ end }}
-<div class="row">
+<table class="table table-sm"><tbody>
+<tr>
     {{ with .Params.groups }}
         {{ if (len .) }}
-            <div class="col"><strong>Group{{ if gt (len .) 1 }}s{{ end }}</strong></div>
-            <div class="col">
+            <th class="bg-light">Group{{ if gt (len .) 1 }}s{{ end }}</th>
+            <td>
             {{ range $index, $group := . }}
                 {{- if gt $index 0 }}, {{ end -}}
                 {{ with $.Site.GetPage (printf "/groups/%v" $group) -}}
                     <a href="{{ .RelPermalink }}">{{ .Params.name }}</a>
                 {{- end -}}
             {{- end -}}
-            </div>
+            </td>
         {{ end }}
     {{ end }}
-</div>
+</tr>
 {{ if (len $rooms) }}
-<div class="row">
-    <div class="col"><strong>Room</strong></div>
-    <div class="col">
+<tr>
+    <th class="bg-light">Room</th>
+    <td>
     {{ range $index, $room := $rooms }}
         <a target="_blank" href="https://tuw-maps.tuwien.ac.at/?q={{ $room }}">{{ $room }}</a>
     {{ end }}
-    (<a title="Visiting FORSYTE" href="/contact/visiting/">how to get there</a>)</div>
-</div>
+    (<a title="Visiting FORSYTE" href="/contact/visiting/">how to get there</a>)</td>
+    </tr>
 {{ end }}
 {{ with $phone }}
-<div class="row">
-    <div class="col"><strong>Phone</strong></div>
-    <div class="col">{{ . }}</div>
-</div>
+<tr>
+    <th class="bg-light">Phone</th>
+    <td>{{ . }}</td>
+</tr>
 {{ end }}
 {{ with $email }}
-<div class="row">
-    <div class="col"><strong>Email</strong></div>
-    <div class="col"><a href="mailto:{{ $email }}">{{ $email }}</a></div>
-</div>
+<tr>
+    <th class="bg-light">Email</th>
+    <td><a href="mailto:{{ $email }}">{{ $email }}</a></td>
+</tr>
 {{ end }}
 {{ with .Params.website }}
-<div class="row">
-    <div class="col"><strong>Website</strong></div>
-    <div class="col"><a href="{{ . }}">{{ . }}</a></div>
-</div>
+<tr>
+    <th class="bg-light">Website</th>
+    <td><a href="{{ . }}">{{ . }}</a></td>
+</tr>
 {{ end }}
-<div class="row">
-    <div class="col"><strong>Other links</strong></div>
-    <div class="col">
-        {{ with .Params.github }}
-        <a href="https://github.com/{{ . }}">
-            <img style="width: 25; height: 25; filter: invert(100%); object-fit: scale; object-position: center" src="https://github.githubassets.com/favicons/favicon-dark.svg"/>
-        </a>
-        {{end}}
-        {{ with $orcid }}
-        <a href="https://orcid.org/{{ . }}">
-            <img style="width: 25; height: 25; object-fit: cover; object-position: center" src="https://orcid.org/assets/icons/favicon.ico"/>
-        </a>
-        {{ end }}
-    </div>
-</div>
+<tr>
+    <th class="bg-light">Other links</th><td>
+{{ with .Params.github }}
+    <a href="https://github.com/{{ . }}">GitHub <i class="fa fa-external-link"></i></a><br>
+{{ end }}
+{{ with $orcid }}
+    <a href="https://orcid.org/{{ . }}">ORCID <i class="fa fa-external-link"></i></a><br>
+{{ end }}
+{{ with .Params.easychair }}
+    <a href="https://easychair.org/publications/author/{{ . }}">EasyChair <i class="fa fa-external-link"></i></a><br>
+{{ end }}
+{{ with .Params.dblp_pid }}
+    <a href="https://dblp.org/pid/{{ . }}">dblp <i class="fa fa-external-link"></i></a><br>
+{{ end }}
+</td></tr>
+</tbody></table>
 </div>
 </div>
 
@@ -118,8 +120,10 @@
 {{ end }}
 {{ end }}
 
+{{ if .Params.show_publications }}
 {{ with partial "get-publications.html" (dict "people" (slice .) "page" .) }}
     <h3 class="display-5 pb-1">Publications</h3>
     {{ partial "list-publications.html" . }}
+{{ end }}
 {{ end }}
 {{ end }}
