@@ -1,16 +1,11 @@
 ---
-name: "Your Name"
-tiss_id:
+name: "Thomas Hader"
+tiss_id: 285070
 groups: []
-roles: []
-website: "https://forsyte.at"
-email: "name@forsyte.at"
-phone: "+43..."
+roles: ["phd"]
 arxiv_author_identifier:
 easychair:
 dblp_pid:
-image: "/images/silhouette.svg"
-room: "HC0300"
 former_member: false
 show_publications: true
 citation_aliases:

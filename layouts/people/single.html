@@ -8,7 +8,7 @@
 {{ $phone := .Params.phone }}
 {{ $email := .Params.email }}
 {{ $oid := "" }}
-{{ $image := "https://informatics.tuwien.ac.at/assets/w18/1.7.3/images/silhouette.svg"}}
+{{ $image := "/images/silhouette.svg"}}
 {{ with .Params.tiss_id }}
     {{ $tiss := partial "get-person.html" . }}
     {{ range $tiss.employee }}
