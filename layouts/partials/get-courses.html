@@ -1,6 +1,8 @@
 {{ $courses := dict }}
 {{ $semesters := slice }}
-{{ range (seq 2018 (add (int now.Year) 1)) }}
+{{ $oids := .oids }}
+{{ $years := .years }}
+{{ range $years }}
     {{ $semesters = $semesters | append (slice (printf "%vS" .)) }}
     {{ $semesters = $semesters | append (slice (printf "%vW" .)) }}
 {{ end }}
@@ -11,7 +13,7 @@
             {{ with .lecturers.oid }}
                 {{ $oid = $oid | append (cond (reflect.IsSlice .) . (slice .)) }}
             {{ end }}
-            {{ if intersect $oid $ }}
+            {{ if intersect $oid $oids }}
                 {{ $course := . }}
                 {{ if (or (not (index $courses .courseNumber)) (gt $course.semesterCode (index $courses .courseNumber).semesterCode )) }}
                     {{ $courses = merge $courses (dict $course.courseNumber $course) }}

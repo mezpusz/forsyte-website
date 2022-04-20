@@ -9,6 +9,10 @@
             {{ end }}
         {{ end }}
     {{ end }}
-    {{ $courses := partial "get-courses.html" $oids }}
-    {{ partial "list-courses.html" $courses }}
+    <h3>Current/upcoming courses</h3>
+    {{ $currentCourses := partial "get-courses.html" (dict "oids" $oids "years" (seq (int now.Year) (add (int now.Year) 1))) }}
+    {{ partial "list-courses.html" $currentCourses }}
+    <h3>Old courses</h3>
+    {{ $oldCourses := partial "get-courses.html" (dict "oids" $oids "years" (seq 2018 (sub (int now.Year) 1))) }}
+    {{ partial "list-courses.html" $oldCourses }}
 {{ end }}

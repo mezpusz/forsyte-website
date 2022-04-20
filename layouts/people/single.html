@@ -114,7 +114,7 @@
 {{ .Content }}
 
 {{ if $oid }}
-{{ with partial "get-courses.html" (slice $oid) }}
+{{ with partial "get-courses.html" (dict "oids" (slice $oid) "years" (seq (int now.Year) (add (int now.Year) 1))) }}
     <h3 class="display-5 pb-1">Teaching</h3>
     {{ partial "list-courses.html" . }}
 {{ end }}
