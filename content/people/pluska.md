@@ -1,8 +1,8 @@
 ---
-name: "Your Name"
-tiss_id:
+name: "Alexander Pluska"
+tiss_id: 334686
 groups: []
-roles: []
+roles: ["phd"]
 website: ""
 email:
 phone:

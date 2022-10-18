@@ -1,10 +1,10 @@
 ---
 name: "Jannik Vierling"
-tiss_id: 254138
+tiss_id:
 groups: ["apre"]
 roles: ["phd"]
 email: "jannik.vierling@tuwien.ac.at"
-former_member: false
+former_member: true
 ---
 
 <!--

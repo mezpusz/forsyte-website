@@ -1,16 +1,16 @@
 ---
-name: "Your Name"
-tiss_id:
+name: "Olha Denisova"
+tiss_id: 364412
 groups: []
 roles: []
 website: ""
 email:
-phone:
+phone: "+43..."
 arxiv_author_identifier:
 easychair:
 dblp_pid:
 image: "/images/silhouette.svg"
-room:
+room: "HC0300"
 former_member: false
 show_publications: true
 citation_aliases:

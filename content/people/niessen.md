@@ -1,8 +1,8 @@
 ---
-name: "Your Name"
-tiss_id:
-groups: []
-roles: []
+name: "Tobias Niessen"
+tiss_id: 367594
+groups: ["rise"]
+roles: ["phd"]
 website: ""
 email:
 phone:

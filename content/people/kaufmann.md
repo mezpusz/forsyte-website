@@ -1,8 +1,8 @@
 ---
-name: "Your Name"
-tiss_id:
-groups: []
-roles: []
+name: "Daniela Kaufmann"
+tiss_id: 370941
+groups: ["apre"]
+roles: ["postdoc"]
 website: ""
 email:
 phone:

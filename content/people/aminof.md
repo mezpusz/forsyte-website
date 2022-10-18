@@ -1,10 +1,10 @@
 ---
 name: "Benjamin Aminof"
-tiss_id: 281660
+tiss_id:
 groups: ["pav"]
 roles: ["postdoc"]
 email: "aminof@forsyte.at"
-former_member: false
+former_member: true
 ---
 
 <!--

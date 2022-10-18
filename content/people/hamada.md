@@ -1,8 +1,8 @@
 ---
-name: "Your Name"
-tiss_id:
-groups: []
-roles: []
+name: "Islam Hamada"
+tiss_id: 367965
+groups: ["rise"]
+roles: ["phd"]
 website: ""
 email:
 phone:
