@@ -1,7 +1,7 @@
 ---
 name: "Jure Kukovec"
 tiss_id: 
-groups: ["cav"]
+groups: []
 roles: ["phd"]
 email:
 image: "https://forsyte.at/wp-content/uploads/jure-260x300.png"

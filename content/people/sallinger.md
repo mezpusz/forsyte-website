@@ -1,7 +1,7 @@
 ---
 name: "Sarah Sallinger"
 tiss_id: 331909
-groups: ["cav"]
+groups: ["rse"]
 roles: ["phd"]
 email:
 image: "https://forsyte.at/wp-content/uploads/sarah-239x300.jpg"

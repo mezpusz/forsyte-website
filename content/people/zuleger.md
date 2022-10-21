@@ -1,7 +1,7 @@
 ---
 name: "Florian Zuleger"
 tiss_id: 191914
-groups: ["pav"]
+groups: ["moc"]
 roles: ["professor"]
 email:
 image: "https://forsyte.at/wp-content/uploads/zuleger-229x300.jpg"

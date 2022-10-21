@@ -1,7 +1,7 @@
 ---
 name: "Friedrich Weber"
 tiss_id: 331815
-groups: ["cav"]
+groups: ["rse"]
 roles: ["phd"]
 email:
 former_member: false

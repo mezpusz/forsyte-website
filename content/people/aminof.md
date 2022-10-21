@@ -1,7 +1,7 @@
 ---
 name: "Benjamin Aminof"
 tiss_id:
-groups: ["pav"]
+groups: ["moc"]
 roles: ["postdoc"]
 email:
 former_member: true

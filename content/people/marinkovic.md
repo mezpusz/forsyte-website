@@ -1,7 +1,7 @@
 ---
 name: "Vedran Marinkovic"
 tiss_id:
-groups: ["pav"]
+groups: ["moc"]
 roles: ["phd"]
 email:
 former_member: false

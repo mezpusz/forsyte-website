@@ -1,36 +1,19 @@
 {{ $groups := .Site.Taxonomies.groups }}
 {{ $rse := ($groups.Get "rse").Page }}
-{{ $cav := ($groups.Get "cav").Page }}
 {{ $apre := ($groups.Get "apre").Page }}
-{{ $pav := ($groups.Get "pav").Page }}
-<div class="py-3" style="background: linear-gradient(white, #e4ffe0 5%, #ffeceb 95%, white);">
-    <div class="row justify-content-center">
-        <p class="lead text-muted">Systems Engineering</p>
-    </div>
+{{ $moc := ($groups.Get "moc").Page }}
+<div class="py-3" style="background: linear-gradient(white, #fff5e0 10%,#fff5e0 90%, white);">
     <div class="row justify-content-around">
-    {{ range slice $rse $cav }}
-        <a class="col-3 d-flex justify-content-center" href="{{ .RelPermalink }}">
-            <figure>
-                <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
-                <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
-            </figure>
-        </a>
+    {{ range slice $rse }}
+      <a class="col-5 d-flex justify-content-center" href="{{ .RelPermalink }}"><h2>{{ .Params.name }}</h2></a>
     {{ end }}
     </div>
     <div class="row justify-content-center" style="align-items: center">
-        <img class="col-5" src="/images/forsyte.png"/>
+      <img class="col-5" src="/images/forsyte.png"/>
     </div>
     <div class="row justify-content-around">
-    {{ range slice $apre $pav }}
-        <a class="col-3 d-flex justify-content-center" href="{{ .RelPermalink }}">
-            <figure>
-                <img src="{{ .Params.logo }}" alt="{{ .Params.name }}"/>
-                <!-- <figcaption style="text-align: center;">{{ .Params.name }}</figcaption> -->
-            </figure>
-        </a>
+    {{ range slice $apre $moc }}
+      <a class="col-5 d-flex justify-content-center" href="{{ .RelPermalink }}"><h2>{{ .Params.name }}</h2></a>
     {{ end }}
-    </div>
-    <div class="row justify-content-center">
-        <p class="lead text-muted mb-2">Formal Methods</p>
     </div>
 </div>

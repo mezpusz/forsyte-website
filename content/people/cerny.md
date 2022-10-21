@@ -1,7 +1,7 @@
 ---
 Title: ""
 tiss_id: 327623
-groups: ["cav"]
+groups: []
 name: "Pavol Černý"
 roles: ["professor"]
 website: "https://cernyp.github.io/"
