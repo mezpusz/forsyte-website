@@ -3,7 +3,7 @@ name: "Friedrich Weber"
 tiss_id: 331815
 groups: ["cav"]
 roles: ["phd"]
-email: "fweber@forsyte.at"
+email:
 former_member: false
 ---
 

@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["phd"]
 website: "https://forsyte.at"
-email: "farokhi@forsyte.at"
+email:
 image: "https://forsyte.at/wp-content/uploads/Soodeh-Farokhi-230x300.png"
 former_member: true
 citation_aliases:

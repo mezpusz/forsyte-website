@@ -3,7 +3,7 @@ name: "Vedran Marinkovic"
 tiss_id:
 groups: ["pav"]
 roles: ["phd"]
-email: "vmarinko@forsyte.at"
+email:
 former_member: false
 ---
 

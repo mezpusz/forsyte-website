@@ -3,7 +3,7 @@ name: "Juliane Auerböck"
 tiss_id: 42281
 groups: []
 roles: ["office-admin"]
-email: "auerboe@forsyte.at"
+email:
 former_member: false
 ---
 

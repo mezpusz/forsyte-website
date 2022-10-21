@@ -4,7 +4,7 @@ tiss_id: 296236
 groups: []
 roles: ["postdoc"]
 website: "http://fmv.jku.at/fazekas"
-email: "kfazekas@forsyte.at"
+email:
 former_member: false
 ---
 

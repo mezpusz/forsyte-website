@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["postdoc"]
 website: "http://www.mjaroschek.com"
-email: "name@forsyte.at"
+email:
 image: "https://forsyte.at/wp-content/uploads/mjarosch-200x300.jpg"
 former_member: true
 citation_aliases:

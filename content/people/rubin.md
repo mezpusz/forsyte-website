@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: []
 website: "http://sasharubin.github.io/"
-email: "name@forsyte.at"
+email:
 former_member: true
 citation_aliases:
 ---

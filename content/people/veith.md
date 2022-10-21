@@ -3,7 +3,7 @@ name: "Helmut Veith"
 tiss_id: 
 groups: []
 roles: ["professor"]
-email: "name@forsyte.at"
+email:
 image: "https://forsyte.at/wp-content/uploads/HOR_1499.jpg"
 former_member: true
 ---

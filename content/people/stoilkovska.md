@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["phd"]
 website: "https://forsyte.at"
-email: "name@forsyte.at"
+email:
 image: "http://forsyte.at/wp-content/uploads/is_crop-300x300.jpg"
 former_member: true
 citation_aliases:

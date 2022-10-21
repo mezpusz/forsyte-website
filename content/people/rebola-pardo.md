@@ -3,7 +3,7 @@ name: "Adrian Rebola Pardo"
 tiss_id: 296535
 groups: ["rse"]
 roles: ["phd"]
-email: "arebolap@forsyte.at"
+email:
 former_member: false
 ---
 

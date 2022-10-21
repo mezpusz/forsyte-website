@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: []
 website: "https://forsyte.at"
-email: "name@forsyte.at"
+email:
 image: "http://forsyte.at/wp-content/uploads/kova-224x300.jpg"
 former_member: true
 citation_aliases:

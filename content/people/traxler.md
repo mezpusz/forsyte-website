@@ -3,7 +3,7 @@ name: "Alexandra Traxler"
 tiss_id:
 groups: []
 roles: ["vcla-manager"]
-email: "atraxler@forsyte.at"
+email:
 former_member: false
 ---
 

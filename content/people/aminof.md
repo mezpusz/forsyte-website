@@ -3,7 +3,7 @@ name: "Benjamin Aminof"
 tiss_id:
 groups: ["pav"]
 roles: ["postdoc"]
-email: "aminof@forsyte.at"
+email:
 former_member: true
 ---
 

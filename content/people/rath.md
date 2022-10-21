@@ -3,7 +3,7 @@ name: "Jakob Rath"
 tiss_id: 62210
 groups: ["apre"]
 roles: ["phd"]
-email: "jrath@forsyte.at"
+email:
 former_member: false
 ---
 

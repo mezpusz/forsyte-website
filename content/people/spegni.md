@@ -3,7 +3,7 @@ name: "Francesco Spegni"
 tiss_id: 
 groups: []
 roles: []
-email: "spegni@forsyte.at"
+email:
 former_member: true
 ---
 

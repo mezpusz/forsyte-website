@@ -4,7 +4,7 @@ tiss_id: 237598
 groups: []
 roles: ["system-admin"]
 website: "https://forsyte.at"
-email: "nitzschke@forsyte.at"
+email:
 former_member: false
 ---
 

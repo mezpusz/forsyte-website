@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["postdoc"]
 website: "https://forsyte.at"
-email: "name@forsyte.at"
+email:
 former_member: true
 citation_aliases:
 ---
