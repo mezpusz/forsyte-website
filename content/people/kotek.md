@@ -2,7 +2,7 @@
 name: "Tomer Kotek"
 tiss_id: 
 groups: []
-roles: []
+roles: ["postdoc"]
 website: "https://forsyte.at"
 email:
 image: "https://forsyte.at/wp-content/uploads/kotekIMG_1962-200x300.jpeg"

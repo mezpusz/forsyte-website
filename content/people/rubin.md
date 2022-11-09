@@ -2,7 +2,7 @@
 name: "Sasha Rubin"
 tiss_id: 
 groups: []
-roles: []
+roles: ["postdoc"]
 website: "http://sasharubin.github.io/"
 email:
 former_member: true

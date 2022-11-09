@@ -1,3 +1,3 @@
 ---
-name: "Models Of Computation"
+name: "Models of Computation"
 ---

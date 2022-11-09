@@ -2,7 +2,7 @@
 name: "Mitra Tabaei"
 tiss_id: 
 groups: []
-roles: []
+roles: ["postdoc"]
 website: "https://forsyte.at"
 email:
 image: "https://forsyte.at/wp-content/uploads/mitra-tabaei-236x300.jpg"

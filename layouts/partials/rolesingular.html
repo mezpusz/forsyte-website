@@ -1,6 +1,9 @@
 {{ with (eq . "professor") }}
 Professor
 {{ end }}
+{{ with (eq . "visiting_professor") }}
+Visiting Professor
+{{ end }}
 {{ with (eq . "privatdozent") }}
 Privatdozent
 {{ end }}
@@ -10,6 +13,9 @@ PostDoc researcher
 {{ with (eq . "phd") }}
 PhD student
 {{ end }}
+{{ with (eq . "msc") }}
+Master student
+{{ end }}
 {{ with (eq . "office-admin") }}
 Office Administrator
 {{ end }}
@@ -18,4 +24,7 @@ System Administrator
 {{ end }}
 {{ with (eq . "vcla-manager") }}
 VCLA Manager
+{{ end }}
+{{ with (eq . "founder") }}
+Founder of FORSYTE
 {{ end }}

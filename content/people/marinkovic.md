@@ -4,7 +4,7 @@ tiss_id:
 groups: ["moc"]
 roles: ["phd"]
 email:
-former_member: false
+former_member: true
 ---
 
 <!--

@@ -2,7 +2,7 @@
 name: "Johannes Birgmeier"
 tiss_id: 
 groups: []
-roles: []
+roles: ["msc"]
 email:
 image: "https://forsyte.at/wp-content/uploads/Portrait-228x300.jpg"
 former_member: true

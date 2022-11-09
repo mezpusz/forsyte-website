@@ -1,24 +1,23 @@
 {{ define "main" }}
 {{ partial "research-groups.html" . }}
 <div class="row py-3">
-<div class="col-9 px-4">
-<div style="column-count: 2; column-gap: 40px">
-    {{ .Content }}
-    <hr/>
+<div class="col-6">
     <h3 class="display-5 pb-1">Research  <a href="/projects/"><i class="fa fa-angle-double-right"></i></a></h3>
     {{ (.Site.GetPage "section" "projects").Content }}
-    <hr/>
+    <h6><a href="/projects/">more...</a></h6>
+</div><div class="col-6">
     <h3 class="display-5 pb-1">Teaching  <a href="/teaching/"><i class="fa fa-angle-double-right"></i></a></h3>
     {{ (.Site.GetPage "section" "teaching").Content }}
+    <h6><a href="/teaching/">more...</a></h6>
+<!-- </div><div class="col-4"> -->
     <hr/>
     <h3 class="display-5 pb-1">Talks  <a href="/talks/"><i class="fa fa-angle-double-right"></i></a></h3>
     {{ (.Site.GetPage "section" "talks").Content }}
-    <hr/>
-    <h3 class="display-5 pb-1">Software  <a href="/software/"><i class="fa fa-angle-double-right"></i></a></h3>
-    {{ (.Site.GetPage "section" "software").Content }}
+    <h6><a href="/talks/">more...</a></h6>
 </div>
 </div>
-<div class="col-3">
+<div class="row py-3"></div>
+<div class="col-12">
 <h3 class="display-5 pb-1">Recent news</h3>
 <div id="news-carousel" class="carousel" data-interval="false">
 <div class="carousel-inner" align="center">
@@ -26,16 +25,18 @@
 {{ $paginator := $news.Paginate $news.Pages 4 }}
 {{ range $index, $page := $paginator.Pagers }}
     <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+        <div class="row">
         {{ range .Pages }}
-            <div class="pb-3" style="height:250;">
+            <div class="col-3 pb-3" style="height:250px;">
             {{ partial "news-small.html" . }}
             </div>
         {{ end }}
         {{ if (le (len .Pages) 4) }}
             {{ range seq (sub 4 (len .Pages)) }}
-            <div class="pb-3" style="height:250;"></div>
+            <div class="col-3 pb-3" style="height:250px;"></div>
             {{ end }}
         {{ end }}
+        </div>
         <div class="btn-group">
             <a class="btn btn-light" data-target="#news-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
             <a class="btn btn-light disabled">{{ add $index 1 }}/{{ len $paginator.Pagers }}</p>
@@ -43,7 +44,6 @@
         </div>
     </div>
 {{ end }}
-</div>
 </div>
 </div>
 </div>

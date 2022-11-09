@@ -2,7 +2,7 @@
 name: "Katarina Singer"
 tiss_id: 
 groups: []
-roles: []
+roles: ["vcla-manager"]
 email:
 image: "https://forsyte.at/wp-content/uploads/2012/03/k_jurik-284x300.jpg"
 former_member: true

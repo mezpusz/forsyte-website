@@ -1,16 +1,16 @@
 ---
-name: "Olha Denisova"
-tiss_id: 364412
-groups: []
+name: "Andrei Voronkov"
+tiss_id:
+groups: ["apre"]
 roles: ["visiting_professor"]
 website: ""
 email:
-phone: "+43..."
+phone:
 arxiv_author_identifier:
 easychair:
 dblp_pid:
 image: "/images/silhouette.svg"
-room: "HC0300"
+room:
 former_member: false
 show_publications: true
 citation_aliases:

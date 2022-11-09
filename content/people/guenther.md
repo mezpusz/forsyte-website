@@ -2,7 +2,7 @@
 name: "Henning Günther"
 tiss_id: 
 groups: []
-roles: []
+roles: ["phd"]
 website: "https://forsyte.at"
 email:
 image: "https://forsyte.at/wp-content/uploads/photo-252x300.jpg"

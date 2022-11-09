@@ -2,7 +2,7 @@
 name: "Francesco Spegni"
 tiss_id: 
 groups: []
-roles: []
+roles: ["postdoc"]
 email:
 former_member: true
 ---

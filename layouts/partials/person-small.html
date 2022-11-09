@@ -1,5 +1,6 @@
 
 {{ $image := "/images/silhouette.svg"}}
+{{ $link := .RelPermalink }}
 {{ with .Params.tiss_id }}
     {{ $tiss := partial "get-person.html" . }}
     {{ with $tiss.picture_uri }}
@@ -9,15 +10,23 @@
 {{ with .Params.image }}
     {{ $image = . }}
 {{ end }}
+{{ with .Params.deceased }}
+    {{ with .obituary }}
+      {{ $link = . }}
+    {{ end }}
+{{ end }}
 
 <div class="media position-relative shadow primary_bg w-100">
     <img width="70" height="70" style="object-fit: cover" src="{{ $image }}" class="image-fluid mx-2 my-2">
     <div class="media-body">
         <div style="height:40px;" class="my-2">
-        <a href="{{ .RelPermalink }}" class="secondary_link stretched-link"><p class="card-title">{{ .Params.name }}</p></a>
+        <a href="{{ $link }}" class="secondary_link stretched-link"><p class="card-title">{{ .Params.name }}{{ with .Params.deceased }} (✝︎){{ end }}</p></a>
         </div>
-        {{ range .Params.roles }}
-            <text class="small">{{ partial "rolesingular.html" . }}</p>
+        {{ with .Params.roles }}
+            {{ $len := (sub (len .) 1) }}
+            {{ range $index, $role := . }}
+                <text class="small">{{ partial "rolesingular.html" . }}{{ with (lt $index $len) }},{{ end }}</text>
+            {{ end }}
         {{ end }}
     </div>
 </div>

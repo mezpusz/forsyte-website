@@ -2,10 +2,12 @@
 name: "Helmut Veith"
 tiss_id: 
 groups: []
-roles: ["professor"]
+roles: ["professor","founder"]
 email:
 image: "https://forsyte.at/wp-content/uploads/HOR_1499.jpg"
 former_member: true
+deceased:
+  obituary: "/news/2016-03-14/"
 ---
 
 <!--

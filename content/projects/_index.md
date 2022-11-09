@@ -2,9 +2,9 @@
 ---
 <p>The three pillars of FORSYTE are:
 <ul>
-<li><a href="/groups/rse/">Rigorous Systems Engineering</a></li>
-<li><a href="/groups/apre/">Automated Program Reasoning</a></li>
-<li><a href="/groups/moc/">Models Of Computation</a></li>
+<li><a href="/groups/apre/">Automated Program Reasoning (Kovács)</a></li>
+<li><a href="/groups/moc/">Models Of Computation (Zuleger)</a></li>
+<li><a href="/groups/rse/">Rigorous Systems Engineering (Weissenbacher)</a></li>
 </ul>
 </p> 
 
