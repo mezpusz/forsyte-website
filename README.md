@@ -2,7 +2,7 @@
 # FORSYTE website
 
 ## Running locally
-After installing `hugo`, you can run a server locally from the root of the repository:
+After installing [this version](https://github.com/gohugoio/hugo/releases/tag/v0.90.1) of `hugo`, you can run a server locally from the root of the repository:
 ```sh
 hugo server -D
 ```
