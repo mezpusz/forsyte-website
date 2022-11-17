@@ -4,7 +4,7 @@ tiss_id: 251491
 groups: ["rse"]
 roles: ["professor"]
 email:
-image: "https://forsyte.at/wp-content/uploads/portrait_georg_300x300.jpg"
+image:
 former_member: false
 ---
 

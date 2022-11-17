@@ -3,7 +3,7 @@ name: "Annu Gmeiner"
 tiss_id: 
 groups: []
 roles: ["phd"]
-website: "https://forsyte.at"
+website:
 email:
 image: "https://forsyte.at/wp-content/uploads/2011/11/P10307551-225x300.jpg"
 former_member: true

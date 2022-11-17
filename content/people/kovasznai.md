@@ -3,7 +3,7 @@ name: "Gergely Kovásznai"
 tiss_id: 
 groups: []
 roles: ["postdoc"]
-website: "https://forsyte.at"
+website:
 email:
 image: "http://forsyte.at/wp-content/uploads/kova-224x300.jpg"
 former_member: true

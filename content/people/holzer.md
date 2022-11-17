@@ -3,7 +3,7 @@ name: "Andreas Holzer"
 tiss_id: 
 groups: []
 roles: ["postdoc"]
-website: "https://forsyte.at"
+website:
 email:
 former_member: true
 citation_aliases:

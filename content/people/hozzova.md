@@ -4,7 +4,7 @@ tiss_id: 330004
 groups: ["apre"]
 roles: ["phd"]
 email:
-image: "https://forsyte.at/wp-content/uploads/phozzova-small-250x300.jpg"
+image:
 former_member: false
 citation_aliases:
 - family: Hozzova

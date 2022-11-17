@@ -3,7 +3,7 @@ name: "Johannes Schoisswohl"
 tiss_id: 275944
 groups: ["apre"]
 roles: ["phd"]
-email: "johannes.schoisswohl@tuwien.ac.at"
+email:
 former_member: false
 ---
 

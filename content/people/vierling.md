@@ -3,7 +3,7 @@ name: "Jannik Vierling"
 tiss_id:
 groups: ["apre"]
 roles: ["phd"]
-email: "jannik.vierling@tuwien.ac.at"
+email:
 former_member: true
 ---
 

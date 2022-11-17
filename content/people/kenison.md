@@ -4,7 +4,7 @@ tiss_id: 350578
 groups: ["apre"]
 roles: ["postdoc"]
 website: "https://georgekenison.github.io/"
-email: "george.kenison@tuwien.ac.at"
+email:
 former_member: false
 ---
 

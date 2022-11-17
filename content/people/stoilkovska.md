@@ -3,7 +3,7 @@ name: "Ilina Stoilkovska"
 tiss_id: 
 groups: []
 roles: ["phd"]
-website: "https://forsyte.at"
+website:
 email:
 image: "http://forsyte.at/wp-content/uploads/is_crop-300x300.jpg"
 former_member: true

@@ -3,7 +3,7 @@ name: "Ivan Radiček"
 tiss_id: 
 groups: []
 roles: ["phd"]
-website: "https://forsyte.at"
+website:
 email:
 image: "http://forsyte.at/wp-content/uploads/ivanradicek.png"
 former_member: true

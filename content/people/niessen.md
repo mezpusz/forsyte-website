@@ -9,7 +9,7 @@ phone:
 arxiv_author_identifier:
 easychair:
 dblp_pid:
-image: "/images/silhouette.svg"
+image:
 room:
 former_member: false
 show_publications: true

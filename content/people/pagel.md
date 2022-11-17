@@ -3,7 +3,7 @@ name: "Jens Pagel"
 tiss_id: 
 groups: []
 roles: ["phd"]
-website: "https://forsyte.at"
+website:
 email:
 image: "https://forsyte.at/wp-content/uploads/scaled-300x200.jpg"
 former_member: true

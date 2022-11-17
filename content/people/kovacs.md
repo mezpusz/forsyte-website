@@ -5,7 +5,7 @@ groups: ["apre"]
 roles: ["professor"]
 website: "http://lkovacs.com/"
 email:
-image: "http://forsyte.at/wp-content/uploads/kovacs1-300x200.jpg"
+image:
 former_member: false
 citation_aliases:
 - family: Kovacs
