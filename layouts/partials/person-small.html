@@ -19,9 +19,18 @@
 <div class="media position-relative shadow primary_bg w-100">
     <img width="70" height="70" style="object-fit: cover" src="{{ $image }}" class="image-fluid mx-2 my-2">
     <div class="media-body">
+        {{ if (eq .Params.name "Helmut Veith") }}
+        <div style="height:18px;" class="my-2">
+        {{ else }}
         <div style="height:40px;" class="my-2">
+        {{ end }}
         <a href="{{ $link }}" class="secondary_link stretched-link"><p class="card-title">{{ .Params.name }}{{ with .Params.deceased }} (✝︎){{ end }}</p></a>
         </div>
+        {{ if (eq .Params.name "Helmut Veith") }}
+        <div>
+          <text class="small">Founder of FORSYTE</text>
+        </div>
+        {{ end }}
         {{ with .Params.roles }}
             {{ $len := (sub (len .) 1) }}
             {{ range $index, $role := . }}
