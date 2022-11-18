@@ -5,7 +5,7 @@ groups: []
 roles: ["privatdozent"]
 website:
 email:
-image: "http://forsyte.at/wp-content/uploads/igor15-cut-e1454192193258.png"
+image: "/images/alumni/igor15-cut-e1454192193258.png"
 former_member: true
 citation_aliases:
 ---

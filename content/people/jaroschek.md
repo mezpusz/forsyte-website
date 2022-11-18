@@ -5,7 +5,7 @@ groups: []
 roles: ["postdoc"]
 website: "http://www.mjaroschek.com"
 email:
-image: "https://forsyte.at/wp-content/uploads/mjarosch-200x300.jpg"
+image: "/images/alumni/mjarosch-200x300.jpg"
 former_member: true
 citation_aliases:
 ---

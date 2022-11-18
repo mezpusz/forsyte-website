@@ -5,7 +5,7 @@ groups: ["apre"]
 roles: ["postdoc"]
 website:
 email:
-image: "https://forsyte.at/wp-content/uploads/Weidenb-3-63-300x200.jpg"
+image: "/images/alumni/Weidenb-3-63-300x200.jpg"
 former_member: true
 citation_aliases:
 ---

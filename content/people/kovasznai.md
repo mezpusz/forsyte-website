@@ -5,7 +5,7 @@ groups: []
 roles: ["postdoc"]
 website:
 email:
-image: "http://forsyte.at/wp-content/uploads/kova-224x300.jpg"
+image: "/images/alumni/kova-224x300.jpg"
 former_member: true
 citation_aliases:
 - family: Kovasznai

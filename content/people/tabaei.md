@@ -5,7 +5,7 @@ groups: []
 roles: ["postdoc"]
 website:
 email:
-image: "https://forsyte.at/wp-content/uploads/mitra-tabaei-236x300.jpg"
+image: "/images/alumni/mitra-tabaei-236x300.jpg"
 former_member: true
 citation_aliases:
 ---

@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["privatdozent"]
 email:
-image: "https://forsyte.at/wp-content/uploads/widder2015-200x300.jpg"
+image: "/images/alumni/widder2015-200x300.jpg"
 former_member: true
 ---
 

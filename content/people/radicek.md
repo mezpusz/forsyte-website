@@ -5,7 +5,7 @@ groups: []
 roles: ["phd"]
 website:
 email:
-image: "http://forsyte.at/wp-content/uploads/ivanradicek.png"
+image: "/images/alumni/ivanradicek-scaled.jpg"
 former_member: true
 citation_aliases:
 ---

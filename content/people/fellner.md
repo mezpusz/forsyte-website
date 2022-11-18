@@ -4,7 +4,7 @@ tiss_id:
 groups: ["rse"]
 roles: ["phd"]
 email:
-image: "https://forsyte.at/wp-content/uploads/DSC_2597-300x300.jpg"
+image: "/images/alumni/DSC_2597-300x300.jpg"
 former_member: false
 citation_aliases:
 ---

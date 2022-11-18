@@ -5,7 +5,7 @@ groups: []
 roles: ["phd"]
 website:
 email:
-image: "http://forsyte.at/wp-content/uploads/2011/12/msinn.jpg"
+image: "/images/alumni/msinn.jpg"
 former_member: true
 citation_aliases:
 ---

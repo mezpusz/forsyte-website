@@ -5,7 +5,7 @@ groups: ["apre"]
 roles: ["phd"]
 website:
 email:
-image: "https://forsyte.at/wp-content/uploads/profile-2020-225x300.png"
+image: "/images/alumni/profile-2020-225x300.png"
 former_member: true
 citation_aliases:
 ---

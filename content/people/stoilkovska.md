@@ -5,7 +5,7 @@ groups: []
 roles: ["phd"]
 website:
 email:
-image: "http://forsyte.at/wp-content/uploads/is_crop-300x300.jpg"
+image: "/images/alumni/is_crop-300x300.jpg"
 former_member: true
 citation_aliases:
 ---
