@@ -1,7 +1,7 @@
 ---
 name: "Thomas Hader"
 tiss_id: 285070
-groups: []
+groups: ["rse"]
 roles: ["phd"]
 former_member: false
 show_publications: true

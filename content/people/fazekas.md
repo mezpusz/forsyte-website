@@ -1,7 +1,7 @@
 ---
 name: "Katalin Fazekas"
 tiss_id: 296236
-groups: []
+groups: ["rse"]
 roles: ["postdoc"]
 website: "http://fmv.jku.at/fazekas"
 email:
