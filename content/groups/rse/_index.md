@@ -1,4 +1,10 @@
 ---
 name: "Rigorous Systems Engineering"
 ---
-Over the last decades, the complexity of computer systems has increased dramatically and so has their ubiquity and importance to the general public. Designers today need computer-assisted methods and tools to support them in the design process. The use of methods like model checking has traditionally been a‑posteriori. Within ARiSE, we aim at to extend such methods to a mathematically rigorous framework that helps the programmer during, instead of after the design process.
+The RiSE group focuses on mathematically rigorous methods and
+techniques for developing software and computer systems. Our research
+interests cover the entire development process, ranging from the
+specification of system properties, synthesis of software and hardware
+components, model-based testing and test case generation, automated
+formal verification techniques such as model checking, as well as the
+diagnosis, localization, and repair of faults.

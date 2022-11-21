@@ -1,7 +1,7 @@
 {{ define "main" }}
     {{ .Content }}
     {{ $oids := slice }}
-    {{ range (.Site.GetPage "section" "people").Pages }}
+    {{ range (where (.Site.GetPage "section" "people").Pages "Params.roles" "intersect" (slice "postdoc" "professor" "privatdozent" "visiting_professor")) }}
         {{ with .Params.tiss_id }}
             {{ if (gt . 0) }}
                 {{ $person := (partial "get-person.html" .) }}
@@ -9,9 +9,25 @@
             {{ end }}
         {{ end }}
     {{ end }}
-    <h3>Current/upcoming courses</h3>
     {{ $currentCourses := partial "get-courses.html" (dict "oids" $oids "years" (seq (int now.Year) (add (int now.Year) 1))) }}
-    {{ partial "list-courses.html" $currentCourses }}
+    {{ $seminars := dict }}
+    {{ $projects := dict }}
+    {{ $rest := dict }}
+    {{ range $courseNumber, $course := $currentCourses }}
+        {{ if (eq $course.courseType "SE") }}
+            {{ $seminars = merge $seminars (dict $courseNumber $course) }}
+        {{ else if (eq $course.courseType "PR") }}
+            {{ $projects = merge $projects (dict $courseNumber $course) }}
+        {{ else }}
+            {{ $rest = merge $rest (dict $courseNumber $course) }}
+        {{ end }}
+    {{ end }}
+    <h3>Current/upcoming courses</h3>
+    {{ partial "list-courses.html" $rest }}
+    <h3>Current/upcoming seminars</h3>
+    {{ partial "list-courses.html" $seminars }}
+    <h3>Current/upcoming projects</h3>
+    {{ partial "list-courses.html" $projects }}
     <h3>Old courses</h3>
     {{ $oldCourses := partial "get-courses.html" (dict "oids" $oids "years" (seq 2018 (sub (int now.Year) 1))) }}
     {{ partial "list-courses.html" $oldCourses }}
