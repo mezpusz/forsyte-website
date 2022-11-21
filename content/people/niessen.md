@@ -1,7 +1,7 @@
 ---
 name: "Tobias Niessen"
 tiss_id: 367594
-groups: ["rise"]
+groups: ["rse"]
 roles: ["phd"]
 website:
 email:

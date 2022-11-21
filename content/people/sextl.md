@@ -1,7 +1,7 @@
 ---
 name: "Florian Sextl"
 tiss_id: 369073
-groups: []
+groups: ["moc"]
 roles: ["phd"]
 website:
 email:
