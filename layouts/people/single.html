@@ -4,6 +4,10 @@
 {{ with .Params.room }}
     {{ $rooms = slice . }}
 {{ end }}
+{{ $websites := slice }}
+{{ with .Params.website }}
+    {{ $websites = slice . }}
+{{ end }}
 {{ $orcid := .Params.orcid }}
 {{ $phone := .Params.phone }}
 {{ $email := .Params.email }}
@@ -14,6 +18,11 @@
     {{ range $tiss.employee }}
         {{ with .room }}
             {{ $rooms = union $rooms (slice .room_code) }}
+        {{ end }}
+        {{ with .websites }}
+            {{ range . }}
+              {{ $websites = union $websites (slice .uri) }}
+            {{ end }}
         {{ end }}
     {{ end }}
     {{ if (and $tiss.orcid (eq $orcid nil)) }}
@@ -69,9 +78,9 @@
     <th class="bg-light">Room</th>
     <td>
     {{ range $index, $room := $rooms }}
-        <a target="_blank" href="https://tuw-maps.tuwien.ac.at/?q={{ $room }}">{{ $room }}</a>
+        <a target="_blank" href="https://tuw-maps.tuwien.ac.at/?q={{ $room }}">Office {{ $room }}</a>
     {{ end }}
-    (<a title="Visiting FORSYTE" href="/contact/visiting/">how to get there</a>)</td>
+    (<a title="Visiting FORSYTE" href="/contact/visiting/">Show FORSYTE location</a>)</td>
     </tr>
 {{ end }}
 {{ with $phone }}
@@ -86,10 +95,14 @@
     <td><a href="mailto:{{ $email }}">{{ $email }}</a></td>
 </tr>
 {{ end }}
-{{ with .Params.website }}
+
+{{ with $websites }}
 <tr>
-    <th class="bg-light">Website</th>
-    <td><a href="{{ . }}">{{ . }}</a></td>
+    <th class="bg-light">Websites</th><td>
+    {{ range . }}
+    <a href="{{ . }}">{{ . }}</a><br>
+    {{ end }}
+    </td>
 </tr>
 {{ end }}
 <tr>

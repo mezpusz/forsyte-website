@@ -3,7 +3,7 @@ name: "Andrei Voronkov"
 tiss_id:
 groups: ["apre"]
 roles: ["visiting_professor"]
-website: ""
+website:
 email:
 phone:
 image:

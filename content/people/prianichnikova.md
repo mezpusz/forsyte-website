@@ -1,16 +1,14 @@
 ---
-name: "Alexander Pluska"
-tiss_id: 334686
+name: "Anna Prianichnikova"
+tiss_id: 195178
 groups: []
-roles: ["phd"]
+roles: ["project-coordinator"]
 website:
 email:
 phone:
 image:
 room:
 former_member: false
-show_publications: true
-citation_aliases:
 ---
 
 <!--

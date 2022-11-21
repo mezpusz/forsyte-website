@@ -3,7 +3,7 @@ name: "Your Name"
 tiss_id:
 groups: []
 roles: []
-website: ""
+website:
 email:
 phone:
 image:

@@ -3,7 +3,7 @@ name: "Florian Sextl"
 tiss_id: 369073
 groups: []
 roles: ["phd"]
-website: ""
+website:
 email:
 phone:
 image:

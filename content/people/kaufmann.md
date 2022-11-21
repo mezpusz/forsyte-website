@@ -3,7 +3,7 @@ name: "Daniela Kaufmann"
 tiss_id: 370941
 groups: ["apre"]
 roles: ["postdoc"]
-website: ""
+website:
 email:
 phone:
 image:

@@ -1,16 +1,15 @@
 ---
-name: "Alexander Pluska"
-tiss_id: 334686
+name: "Andrea Hackl"
+tiss_id: 367793
 groups: []
-roles: ["phd"]
+roles: ["vcla-manager"]
 website:
 email:
 phone:
 image:
 room:
 former_member: false
-show_publications: true
-citation_aliases:
+show_publications: false
 ---
 
 <!--

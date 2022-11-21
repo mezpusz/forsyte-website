@@ -3,7 +3,7 @@ name: "Islam Hamada"
 tiss_id: 367965
 groups: ["rise"]
 roles: ["phd"]
-website: ""
+website:
 email:
 phone:
 image:

@@ -3,7 +3,7 @@ name: "Olha Denisova"
 tiss_id: 364412
 groups: []
 roles: ["visiting_professor"]
-website: ""
+website:
 email:
 phone:
 image:

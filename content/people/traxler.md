@@ -4,7 +4,7 @@ tiss_id:
 groups: []
 roles: ["vcla-manager"]
 email:
-former_member: false
+former_member: true
 ---
 
 <!--

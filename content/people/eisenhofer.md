@@ -3,7 +3,7 @@ name: "Clemens Eisenhofer"
 tiss_id: 306114
 groups: ["apre"]
 roles: ["phd"]
-website: ""
+website:
 email:
 phone:
 image:
