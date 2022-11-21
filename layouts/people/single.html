@@ -94,17 +94,13 @@
 {{ end }}
 <tr>
     <th class="bg-light">Other links</th><td>
-{{ with .Params.github }}
-    <a href="https://github.com/{{ . }}">GitHub <i class="fa fa-external-link"></i></a><br>
-{{ end }}
 {{ with $orcid }}
     <a href="https://orcid.org/{{ . }}">ORCID <i class="fa fa-external-link"></i></a><br>
 {{ end }}
-{{ with .Params.easychair }}
-    <a href="https://easychair.org/publications/author/{{ . }}">EasyChair <i class="fa fa-external-link"></i></a><br>
-{{ end }}
-{{ with .Params.dblp_pid }}
-    <a href="https://dblp.org/pid/{{ . }}">dblp <i class="fa fa-external-link"></i></a><br>
+{{ with .Params.other_links }}
+    {{ range . }}
+    <a href="{{ .url }}">{{ .title }} <i class="fa fa-external-link"></i></a><br>
+    {{ end }}
 {{ end }}
 </td></tr>
 </tbody></table>

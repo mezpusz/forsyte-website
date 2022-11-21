@@ -6,14 +6,14 @@ roles: []
 website: ""
 email:
 phone:
-arxiv_author_identifier:
-easychair:
-dblp_pid:
 image:
 room:
 former_member: false
 show_publications: true
 citation_aliases:
+other_links:
+- title: "title"
+  url: "url"
 ---
 
 <!--

@@ -6,9 +6,6 @@ roles: ["msc"]
 website:
 email:
 phone:
-arxiv_author_identifier:
-easychair:
-dblp_pid:
 image:
 room:
 former_member: false
