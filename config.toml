@@ -11,9 +11,10 @@ title = "FORSYTE"
     [markup.goldmark.renderer]
       unsafe = true
 
-# Disable caches for getcsv, getjson, getresource.
-# Otherwise, we would cache e.g. person information JSON files from TISS in /tmp/hugo_cache, so we wouldn't
-# notice when people change their profile pictures and still link to the old defunct picture location.
+# Set a small timeout for getcsv, getjson, getresource caches.
+# With the default setting of -1 (= cache indefinitely), we would cache e.g. person information JSON
+# files from TISS in /tmp/hugo_cache indefinitely, so we wouldn't notice when people change their
+# profile pictures and still link to the old defunct picture location.
 [caches]
   [caches.getcsv]
     maxAge = "5m"
