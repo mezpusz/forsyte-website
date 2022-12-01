@@ -16,8 +16,8 @@ title = "FORSYTE"
 # notice when people change their profile pictures and still link to the old defunct picture location.
 [caches]
   [caches.getcsv]
-    maxAge = 0
+    maxAge = "5m"
   [caches.getjson]
-    maxAge = 0
+    maxAge = "5m"
   [caches.getresource]
-    maxAge = 0
+    maxAge = "5m"
