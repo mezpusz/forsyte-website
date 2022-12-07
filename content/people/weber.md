@@ -4,7 +4,7 @@ tiss_id: 331815
 groups: ["moc"]
 roles: ["phd"]
 email:
-former_member: false
+former_member: true
 ---
 
 <!--
