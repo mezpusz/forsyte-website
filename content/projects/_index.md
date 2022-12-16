@@ -1,8 +1,9 @@
 ---
 ---
-<p>The three pillars of FORSYTE are:
+<p>The four pillars of FORSYTE are:
 <ul>
 <li><a href="/groups/apre/">Automated Program Reasoning (Kovács)</a></li>
+<li><a href="/groups/cav/">Computer Aided Verification (Černý)</a></li>
 <li><a href="/groups/moc/">Models Of Computation (Zuleger)</a></li>
 <li><a href="/groups/rse/">Rigorous Systems Engineering (Weissenbacher)</a></li>
 </ul>

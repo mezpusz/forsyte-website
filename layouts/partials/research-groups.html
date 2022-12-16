@@ -1,10 +1,11 @@
 {{ $groups := .Site.Taxonomies.groups }}
-{{ $rse := ($groups.Get "rse").Page }}
 {{ $apre := ($groups.Get "apre").Page }}
+{{ $cav := ($groups.Get "cav").Page }}
 {{ $moc := ($groups.Get "moc").Page }}
+{{ $rse := ($groups.Get "rse").Page }}
 <div class="py-3" style="background: linear-gradient(white, #fffaf0 10%,#fffaf0 90%, white);">
     <div style="height:100px; align-items: center" class="row justify-content-around">
-    {{ range slice $apre }}
+    {{ range slice $apre $cav }}
       <a class="col-5 d-flex justify-content-center" href="{{ .RelPermalink }}"><h2>{{ .Params.name }}</h2></a>
     {{ end }}
     </div>
