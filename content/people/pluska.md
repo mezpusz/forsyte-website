@@ -1,7 +1,7 @@
 ---
 name: "Alexander Pluska"
 tiss_id: 334686
-groups: []
+groups: ["moc","rse"]
 roles: ["phd"]
 website:
 email:

@@ -1,7 +1,7 @@
 ---
 name: "Sarah Sallinger"
 tiss_id: 331909
-groups: ["rse"]
+groups: ["moc","rse"]
 roles: ["phd"]
 email:
 image:
