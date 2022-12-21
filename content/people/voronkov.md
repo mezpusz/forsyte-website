@@ -3,10 +3,10 @@ name: "Andrei Voronkov"
 tiss_id:
 groups: ["apre"]
 roles: ["visiting_professor"]
-website:
+website: http://voronkov.com/
 email:
 phone:
-image:
+image: http://voronkov.com/images/spain.jpg
 room:
 former_member: false
 show_publications: true
