@@ -13,6 +13,7 @@ other_links:
 - title: "dblp"
   url: "https://dblp.org/pid/270/6026"
 room: "HA 03 12"
+image: "/images/alumni/schoisswohl-200x300.png"
 ---
 
 <!--
